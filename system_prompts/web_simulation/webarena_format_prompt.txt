@@ -1,0 +1,495 @@
+Given the following content of a GUI and the previous GUI in JSON format, translate the GUI content into new state JSON format, based on previous GUI. 
+
+Some basic element tags are:
+"a": hyperlink
+"input": container of input content
+"img": images
+"button": button
+"text" or "div": a section of texts
+"textarea": textbox to fill in.
+
+each element has the following attributes:
+coord: coordinates in the window
+tag: the role
+content_description: description of the element
+caption: caption of image
+other boolean attributes are: is_checkable, is_checked, is_clickable, is_editable, is_draggable.
+
+Note: Only use caption for image element, and put content inside `content_description` for text element.
+Use link or "a" tag for element that you think the text element is interactive, clicking on this element could lead to changes on the website.
+Don't miss any composed content. The webpage is rich and complex, meaning that you should use multiple JSON element for one GUI element. For example, You should break a composite element into multiple parts (e.g. you can break "First Name: Roy" into "First Name" and "Roy" and then generate element for each one)
+Note: When you find elements from the content that are identical to some element in the reference GUI, just copy from the reference GUI.
+
+Example input:
+
+Description of new state: The new website is a discussion thread page on Reddit, with title "What do you think of the new European Cup champion", where user could join the discussion around the topic. The webpage should have informative content including a thread interaction section to share the user's view with others, a title section and a body section showing the main content of the discussion.
+Since we are still navigating in the same domain website, namely Reddit, the border structure and functionalities of the domain should be kept. But the body of the new page should focus on the thread content.
+## Structural sections
+- Header section
+  - A "Reddit" Logo which directs to the homepage.
+
+- Navigation section
+  - "Home", "Forums", "Wiki", "Notifications", "Submit", "About Reddit" buttons.
+
+- Search section 
+  - a search bar for with default content "Find posts or topics".
+
+## Informative sections
+- Thread interaction section
+  - A "Comment" button for users to engage directly with the post
+  - A "Share" button for users to share the discussion thread.
+  - An "Upvote" button and a "Downvote" button for users to express their opinions on the post
+
+- Title section
+  - Title of the post: What do you think of the new European Cup champion Spain?
+
+
+- Body section
+  - Post content: "Spain has triumphed in the latest European Cup, showcasing a remarkable performance throughout the tournament. Fans are buzzing with excitement and pride as the national team brings home the trophy. What are your thoughts on their journey? Did they exceed your expectations? What does this victory mean for the future of Spanish football?"
+  - Upvote: 569. Downvote: 0. Viewed: 1.5k
+  - Date: Jul 15th, 2024
+  - Creator: AmarGod
+
+  - A comment section where users can share their thoughts, including:
+    - Alice comment: "I think Spain played incredibly well! Their teamwork was on another level!" upvote: 5. downvote: 0. 12h ago.
+    - LetsGOO comment: "As a fan, I couldn't be prouder. This win is a testament to their hard work and dedication." upvote: 12. downvote: 0. 3d ago.
+
+  - "Upvote" and "Downvote" button for each comment to express readers' opinions on the comment.
+
+  - A poll element asking users: "What was the key factor in Spain's success?" 
+    - option "Strong defense"
+    - option "Midfield control" 
+    - option "Star players"
+    - option "Coaching strategy"
+
+  - Related threads
+    - What do you think of Amar?
+    - 2024 Most Valuable Football Player
+
+
+Example output:
+{
+    "coord": {
+        "id": 1693
+      },
+    "tag": "Root"
+    "content_description": "Discussion thread #10556"
+    "elements": [
+    {
+      "coord": {
+        "id": 6932
+      },
+      "tag": "div",
+      "content_description": "Header",
+      "elements": [
+        {
+          "coord": {
+            "id": 156
+          },
+          "tag": "img",
+          "content_description": "Reddit Logo",
+          "is_clickable": true
+        }
+      ]
+    },
+    {
+        "coord": {
+        "id": 69
+        },
+        "tag": "div",
+        "content_description": "Navigation section"
+        "elements": [
+        {
+          "coord": {
+            "id": 315
+          },
+          "tag": "button",
+          "content_description": "Home",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 2224
+          },
+          "tag": "button",
+          "content_description": "Popular",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 8155
+          },
+          "tag": "button",
+          "content_description": "All",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 655
+          },
+          "tag": "a",
+          "content_description": "Create a community",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 7121
+          },
+          "tag": "a",
+          "content_description": "Help",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 1378
+          },
+          "tag": "a",
+          "content_description": "About Reddit",
+          "is_clickable": true
+        }
+        ]
+    },
+    {
+      "coord": {
+        "id": 612
+      },
+      "tag": "div",
+      "content_description": "Search Bar",
+      "elements": [
+        {
+          "coord": {
+            "id": 1259
+          },
+          "tag": "input",
+          "content_description": "Find posts or topics",
+          "is_editable": true
+        }
+      ]
+    },
+    {
+      "coord": {
+        "id": 6120
+      },
+      "tag": "div"
+      "content_description": "Main Content",
+      "elements": [
+        {
+          "coord": {
+            "id": 3012
+          },
+          "tag": "text",
+          "content_description": "What do you think of the new European Cup champion Spain?"
+        },
+        {
+          "coord": {
+            "id": 3023
+          },
+          "tag": "button",
+          "content_description": "Upvote"
+        },
+        {
+          "coord": {
+            "id": 3034
+          },
+          "tag": "text",
+          "content_description": "569"
+        },
+        {
+          "coord": {
+            "id": 3047
+          },
+          "tag": "button",
+          "content_description": "Downvote"
+        },
+        {
+          "coord": {
+            "id": 3050
+          },
+          "tag": "text",
+          "content_description": "0"
+        },
+        {
+          "coord": {
+            "id": 3055
+          },
+          "tag": "text",
+          "content_description": "Viewed:"
+        },
+        {
+          "coord": {
+            "id": 3067
+          },
+          "tag": "text",
+          "content_description": "1.5k"
+        },
+        {
+          "coord": {
+            "id": 3088
+          },
+          "tag": "text",
+          "content_description": "Date"
+        },
+        {
+          "coord": {
+            "id": 3095
+          },
+          "tag": "a",
+          "content_description": "Jul 25th, 2024"
+        },
+        {
+          "coord": {
+            "id": 3103
+          },
+          "tag": "a",
+          "content_description": "Creator"
+        },
+        {
+          "coord": {
+            "id": 3189
+          },
+          "tag": "a",
+          "content_description": "AmarGod"
+        },
+        {
+          "coord": {
+            "id": 4613
+          },
+          "tag": "text",
+          "content_description": "Spain has triumphed in the latest European Cup, showcasing a remarkable performance throughout the tournament. Fans are buzzing with excitement and pride as the national team brings home the trophy. What are your thoughts on their journey? Did they exceed your expectations? What does this victory mean for the future of Spanish football?"
+        },
+        {
+          "coord": {
+            "id": 8314
+          },
+          "tag": "button",
+          "content_description": "Comment",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 5615
+          },
+          "tag": "button",
+          "content_description": "Share",
+          "is_clickable": true
+        }
+      ]
+    },
+    {
+      "coord": {
+        "id": 61992
+      },
+      "tag": "div",
+      "content_description": "Comment Section",
+      "elements": [
+        {
+          "coord": {
+            "id": 288
+          },
+          "tag": "div",
+          "content_description": "User comments on the discussion"
+        },
+        {
+          "coord": {
+            "id": 919
+          },
+          "tag": "a",
+          "content_description": "Alice"
+        },
+        {
+          "coord": {
+            "id": 920
+          },
+          "tag": "text",
+          "content_description": "I think Spain played incredibly well! Their teamwork was on another level!"
+        },
+        {
+          "coord": {
+            "id": 926
+          },
+          "tag": "button",
+          "content_description": "Upvote",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 934
+          },
+          "tag": "text",
+          "content_description": "5"
+        },
+        {
+          "coord": {
+            "id": 946
+          },
+          "tag": "button",
+          "content_description": "Downvote",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 965
+          },
+          "tag": "text",
+          "content_description": "0"
+        },
+        {
+          "coord": {
+            "id": 986
+          },
+          "tag": "text",
+          "content_description": "12h ago."
+        },
+        {
+          "coord": {
+            "id": 2034
+          },
+          "tag": "a",
+          "content_description": "LetsGOO"
+        },
+        {
+          "coord": {
+            "id": 2035
+          },
+          "tag": "text",
+          "content_description": "As a fan, I couldn't be prouder. This win is a testament to their hard work and dedication."
+        },
+        {
+          "coord": {
+            "id": 2036
+          },
+          "tag": "button",
+          "content_description": "Upvote",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 2037
+          },
+          "tag": "text",
+          "content_description": "12"
+        },
+        {
+          "coord": {
+            "id": 2039
+          },
+          "tag": "button",
+          "content_description": "Downvote",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 2044
+          },
+          "tag": "text",
+          "content_description": "0"
+        },
+        {
+          "coord": {
+            "id": 2058
+          },
+          "tag": "text",
+          "content_description": "3d ago."
+        }
+      ]
+    },
+    {
+      "coord": {
+        "id": 562
+      },
+      "tag": "div",
+      "content_description": "Poll Section",
+      "elements": [
+        {
+          "coord": {
+            "id": 2086
+          },
+          "tag": "text",
+          "content_description": "What do you think was the key factor in Spain's success?"
+        },
+        {
+          "coord": {
+            "id": 2897
+          },
+          "tag": "option",
+          "content_description": "Strong defense",
+          "checked": false
+        },
+        {
+          "coord": {
+            "id": 3265
+          },
+          "tag": "option",
+          "content_description": "Midfield control",
+          "checked": false
+        },
+        {
+          "coord": {
+            "id": 4009
+          },
+          "tag": "option",
+          "content_description": "Star players",
+          "checked": false
+        },
+        {
+          "coord": {
+            "id": 5001
+          },
+          "tag": "option",
+          "content_description": "Coaching strategy",
+          "checked": false
+        }
+      ]
+    },
+    {
+      "coord": {
+        "id": 203
+      },
+      "tag": "div",
+      "content_description": "Related threads",
+      "elements": [
+        {
+          "coord": {
+          "id": 3208
+        },
+          "tag": "a",
+          "content_description": "What do you think of Amar",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 355
+          },
+          "tag": "a",
+          "content_description": "2024 Most Valuable Football Player",
+          "is_clickable": true
+        }
+      ]
+    }
+    {
+      "coord": {
+        "id": 283
+      },
+      "tag": "div",
+      "content_description": "Pagination",
+      "elements": [
+        {
+          "coord": {
+          "id": 1880
+        },
+          "tag": "button",
+          "content_description": "Prev page",
+          "is_clickable": true
+        },
+        {
+          "coord": {
+            "id": 1991
+          },
+          "tag": "button",
+          "content_description": "Next page",
+          "is_clickable": true
+        }
+      ]
+    }
+  ]
+}

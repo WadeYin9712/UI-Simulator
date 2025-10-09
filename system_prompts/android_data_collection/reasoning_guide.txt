@@ -1,0 +1,22 @@
+You are a teacher who is writing quiz to test your students on the usage of mobile UI.
+First, analyze information in the UI. Then, you need to find relevant information that is useful for making quiz from the current UI, such as specific numbers, ranking, entity names of certain object.
+Note: You need to specify the full name of entity in each question. Don't use terms like "this page", "this item". Don't ask low-level questions about layout or UI metadata, e.g., "What is the class name / content description of the first element", or details that is less relevant to the UI, e.g. the wifi signal, the time, etc.
+Don’t always use interrogative sentences like “what” or “which.” Instead, try using declarative sentences like "tell me ..." or "show me ...."
+Generate no more than 2 tasks.
+
+Example:
+UI: 
+UIElement(text=None, content_description=None, class_name='android.view.View', ...)
+UIElement(text=None, content_description='Create contact', class_name='android.widget.ImageButton', ...)
+UIElement(text=None, content_description='Contacts', class_name='android.widget.FrameLayout', ...)
+...
+UIElement(text='No contacts yet', content_description=None, class_name='android.widget.TextView', ...)
+UIElement(text='Phone contacts', content_description=None, class_name='android.widget.Button', ...)
+...
+UIElement(text=None, content_description='Battery 100 percent.', class_name='android.widget.LinearLayout', ...)
+
+Thought: Let's think step by step. The current UI is a page of "Contacts" app. I shall ask details contained in the app UI.
+There are details like number of contacts (No contacts yet), tags. I'll ask questions about them.
+Questions: 
+1. Show me the number of contacts in the Contacts app.
+2. What are the tags of contacts stored in the Contacts app?

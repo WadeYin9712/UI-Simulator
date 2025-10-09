@@ -1,0 +1,106 @@
+You are asked to modify a web task. You will be given a description of website and original task that correspond to the website.
+
+To be successful, it is very important to follow the following rules:
+    ##Find the name of website and figure out what kind of website is given.
+    ##Generate unique, diverse entity names and add to original task to make the task more specific. For example, a specific entity name for shopping website is a product name, a specific entity name for map website is a specific place name.
+    ##Generate 15 examples. You should try to think of what kinds of terms are commonly searched.
+    ##The search term should NOT be too complex, JUST the name. For example, we don't want "the Eiffel Tower in Paris", but just "Effiel Tower".
+
+Examples:
+Website Description:
+1. The name of the webpage is **One Stop Market**.
+2. The function of this webpage is to serve as an online shopping platform where users can browse and purchase a variety of products across different categories such as Beauty & Personal Care, Sports & Outdoors, Clothing, Home & Kitchen, and more. It includes features for account management, product searches, and a shopping cart.    
+Original task:
+Search for a certain product.
+##Thought: I'll try to search for a certain product. The candidiates should be diverse. People often search foods, clothes, fruits, electric devices, toys, detergents, trip utilities on the shopping website.
+##Tasks:
+* foods
+1. Search for OREO milk cookies.
+2. Search for Crisco Oil 48 Oz.
+3. Search for L'Oréal Paris Revitalift Anti-Aging Cream.
+...
+
+* fruits
+1. Search for Driscoll's Strawberries.
+...
+
+* detergents
+1. Search for Dyson V15 Detect Cordless Vacuum Cleaner.
+2. Search for KitchenAid Artisan Stand Mixer.
+...
+
+* electric devices
+1. Search for EvoCharge Pro 20000mAh Power Bank.
+2. Search for Garmin Fenix 7 Multisport GPS Watch.
+
+* clothes
+1. Search for The North Face Borealis Backpack.
+2. Search for Nike Air Max 97 Sneakers.
+3. Search for Patagonia Torrentshell 3L Rain Jacket.
+...
+
+* toy
+1. Search for LEGO Star Wars Millennium Falcon Set.
+2. Search for Hot Wheels Diecast Cars.
+...
+
+* Trip utilities
+1. Search for CAMEL 2 Person Tent, Waterproof Spacious, Lightweight Portable Backpacking Tent for Outdoor Camping/Hiking.
+2. Search for Hydro Flask Wide Mouth Water Bottle.
+...
+
+Website Description:
+1. The name of the webpage is **Gitlab**.
+2. The function of this webpage is to provide an platform for developers to maintain their projects, discuss in community about their projects and collaboration.
+Original task:
+Create a project.
+## Thought: 
+## Tasks:
+* Privacy
+1. Create a project named 'GuardDP'.
+2. Create a project named 'NoiseWall'.
+3. Create a project named 'MIA-Guard'.
+...
+
+* Artificial Intelligence
+1. Create a project named 'ShieldAI'.
+2. Create a project named 'ModelVeil'.
+
+* Distributed system
+1. Create a project named 'SecureFlux'.
+2. Create a project named 'RPCManager'
+...
+
+* Algorithm
+1. Create a project named 'GraphSolver'.
+2. Create a project named 'SmartSATSolver'.
+...
+
+* Data management
+1. Create a project named 'DataFort'.
+2. Create a project named 'Custom_SQL_Server'.
+...
+
+
+Website Description:
+1. The name of the webpage is **OpenStreetMap**.
+2. The function of this webpage is to provide an interactive mapping service where users can view, edit, and contribute to a global map created collaboratively by individuals. It offers features such as searching for locations, finding directions, viewing GPS traces, and accessing user diaries and community information. Additionally, it allows users to zoom in and out, show their location, and share maps, making it a versatile tool for navigation and geographic information.
+Original task:
+Find directions between two places on the map.
+##Thought: I'll try to search for a specific location. The candidiates should be diverse. People often search restaurants, universities, residences, cities, attractions etc on a map website.
+##Tasks:
+1. Find directions between Univerisity of California, Los Angeles and Westfield Century City.
+2. Find directions between Googleplex in Mountain View and the Redwood City Caltrain Station.
+3. Find directions between The Coffee House and Battery Park.
+4. Find directions between Chamblee-Tucker Road and The Forum Peachtree Corners.
+5. Find directions between the Royal Observatory and The Victoria Park Market.
+6. Find directions between University of Toronto's St. George Campus and the Kensington Market.
+7. Find directions between Corner Bakery and City Park.
+8. Find directions between Pont des Arts and the Marché des Enfants Rouges.
+9. Find directions between The Lighthouse at Cape Hatteras and Duck Donuts.
+10. Find directions between Camp Nou Stadium and Park Güell.
+11. Find directions between Parnell Square and the Sandymount Strand Beach.
+12. Find directions between Boathouse Row and Valley Forge National Historical Park.
+13. Find directions between the Bald Knob Wildlife Refuge and the Blue Canoe Cafe.
+14. Find directions between the Village Green in Bar Harbor and Jordan Pond House at Acadia National Park.
+15. Find directions between Navy Pier in Chicago and the Garfield Park Conservatory.

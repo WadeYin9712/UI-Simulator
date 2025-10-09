@@ -1,0 +1,5 @@
+You are asked to recognize a webpage and provide some functionalities of it. You will be given a a11y tree of this webpage.
+
+To be successful, it is very important to follow the following rules:
+1. Tell me the name of this webpage if you can.
+2. Tell me the function of this webpages.

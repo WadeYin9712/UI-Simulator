@@ -1,0 +1,128 @@
+Given the following description of a GUI and the refernce GUI, create the content of a new state by taking elements and rewriting some important contents within the reference state.
+Note that the description of content might be short, but you should provide corresponding essential information in the reference GUI. So you should pay attention to each element in the reference GUI.
+If you think the reference GUI doesn't match the descrition, then you should generate a lot of new contents that match the description, but within the same structure.
+If you think the reference GUI matches the descrition, you could copy most of the content from the reference state, and only modify a few important contents if needed. Do not try to add additional details or information in this case.
+- You are only allowed to modify information related to some named entities. You are not allowed to add/remove the functionality elements in the reference state if you think it matches the description. If no named entities are in the reference state, you can make no change.
+
+Example input:
+
+Reference state: 
+[1] RootWebArea 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein' focused: True
+        [3] generic '' busy: 1
+                [1234] link 'My Account'
+                [1232] link 'My Wish List'
+                [1236] link 'Sign Out'
+                [1239] StaticText 'Welcome to One Stop Market'
+                [1140] link 'Skip to Content'
+                [1149] link 'store logo'
+                        [1242] img 'one_stop_market_logo'
+                [1243] link '\ue611 My Cart'
+                [2133] StaticText 'Search'
+                [1404] combobox '\ue615 Search' autocomplete: both hasPopup: listbox required: False expanded: False
+                [2136] link 'Advanced Search'
+                [1407] button 'Search' disabled: True
+                [1096] tablist '' multiselectable: False orientation: horizontal
+                        [1098] tabpanel ''
+                                [40] menu '' orientation: vertical
+                                        [791] menuitem '\ue622 Beauty & Personal Care' hasPopup: menu
+                                        [856] menuitem '\ue622 Sports & Outdoors' hasPopup: menu
+                                        [866] menuitem '\ue622 Clothing, Shoes & Jewelry' hasPopup: menu
+                                        [880] menuitem '\ue622 Home & Kitchen' hasPopup: menu
+                                        [917] menuitem '\ue622 Office Products' hasPopup: menu
+                                        [925] menuitem '\ue622 Tools & Home Improvement' hasPopup: menu
+                                        [930] menuitem '\ue622 Health & Household' hasPopup: menu
+                                        [936] menuitem '\ue622 Patio, Lawn & Garden' hasPopup: menu
+                                        [941] menuitem '\ue622 Electronics' hasPopup: menu
+                                        [1002] menuitem '\ue622 Cell Phones & Accessories' hasPopup: menu
+                                        [1017] menuitem '\ue622 Video Games' hasPopup: menu
+                                        [1030] menuitem '\ue622 Grocery & Gourmet Food' hasPopup: menu
+                [1173] link 'Home'
+                [1176] StaticText 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein'
+                [5] main ''
+                        [1177] heading 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein'
+                        [11] generic 'Availability'
+                                [13] StaticText 'IN STOCK'
+                        [1252] StaticText 'SKU'
+                        [1370] StaticText 'B08X4XF8WM'
+                        [1184] LayoutTable ''
+                                [1254] link 'Be the first to review this product'
+                        [1256] StaticText '$23.14'
+                        [1198] LayoutTable ''
+                                [1377] StaticText 'Qty'
+                                [1378] spinbutton 'Qty' required: False valuemin: 0 valuemax: 0 valuetext: 
+                                [1379] button 'Add to Cart'
+                        [1200] link 'Add to Wish List'
+                        [1201] link 'Add to Compare'
+                        [1206] link 'Skip to the end of the images gallery'
+                        [1207] img 'main product photo'
+                        [1117] button 'Previous'
+                        [1119] generic 'Image'
+                                [2139] img 'Image'
+                        [1118] button 'Next'
+                        [2122] button 'Previous'
+                        [2143] button 'Image'
+                        [2144] button 'Image'
+                        [2124] button 'Next'
+
+Description of new state: 
+The new website is a product page on Onestopshop of 'KontrolFreek Performance Grips for Playstation 5 (PS5) Controller (Galaxy Purple)', where user could check the product detail and interact with the product by making order, add to wishlist, etc.
+
+Example output:
+RootWebArea 'KontrolFreek Performance Grips for Playstation 5 (PS5) Controller (Galaxy Purple)'
+generic ''
+link 'My Account'
+link 'My Wish List'
+link 'Sign Out'
+StaticText 'Welcome to One Stop Market'
+link 'Skip to Content'
+link 'store logo'
+img 'one_stop_market_logo'
+link '\ue611 My Cart'
+StaticText 'Search'
+combobox '\ue615 Search'
+link 'Advanced Search'
+button 'Search'
+tablist ''
+tabpanel ''
+menu ''
+menuitem '\ue622 Beauty & Personal Care'
+menuitem '\ue622 Sports & Outdoors'
+menuitem '\ue622 Clothing, Shoes & Jewelry'
+menuitem '\ue622 Home & Kitchen'
+menuitem '\ue622 Office Products'
+menuitem '\ue622 Tools & Home Improvement'
+menuitem '\ue622 Health & Household'
+menuitem '\ue622 Patio, Lawn & Garden'
+menuitem '\ue622 Electronics'
+menuitem '\ue622 Cell Phones & Accessories'
+menuitem '\ue622 Video Games'
+menuitem '\ue622 Grocery & Gourmet Food'
+link 'Home'
+StaticText 'KontrolFreek Performance Grips for Playstation 5 (PS5) Controller (Galaxy Purple)'
+main ''
+heading 'KontrolFreek Performance Grips for Playstation 5 (PS5) Controller (Galaxy Purple)'
+generic 'Availability'
+StaticText 'IN STOCK'
+StaticText 'SKU'
+StaticText 'B08ZT5YWBS'
+LayoutTable ''
+link 'Be the first to review this product'
+StaticText '$14.99'
+generic 'Color * Galaxy Purple Inferno Red Nightfall Black Nightfall Black XT (Extra-Thin)'
+radio 'Galaxy Purple'
+radio 'Inferno Red'
+radio 'Nightfall Black'
+radio 'Nightfall Black XT (Extra-Thin)'
+LayoutTable ''
+StaticText 'Qty'
+spinbutton 'Qty'
+button 'Add to Cart'
+link 'Skip to the end of the images gallery'
+button 'Previous'
+generic 'Image'
+img 'Image'
+button 'Next'
+button 'Previous'
+button 'Image'
+button 'Image'
+button 'Next'

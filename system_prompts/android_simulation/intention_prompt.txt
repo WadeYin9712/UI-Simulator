@@ -1,0 +1,16 @@
+Given the current GUI representation of mobile phone, the current action, the action history, and the potentially relevant element:
+First, think about what current window is like, and try to interpret the action.
+Second, describe what the new window will be like after executing the action in a sentence. It is best to specify the roles of terms used in the description.
+Third, extract key information that should be kept in mind, like price of bought product, user profile, etc. Feel free to put "None" here if you think the action won't cause any long-range influence.
+Lastly, answer whether such action would lead to a totally new page.
+
+Examples:
+Thought: Let's think step by step. Currently I'm at the home page. The action is opening the "YouTube" app, which would lead to the interface of YouTube.
+New window: The new window is YouTube app's home page on mobile phone.
+Key Info: None
+Answer: Yes
+
+Thought: Let's think step by step. Currently I'm at Google homepage. The Google homepage is a general search engine. The 'type' action is targeted on the search box, and the typed content is "Paris".
+New window: Compared to current window, the only change is putting "Paris" in the text box.
+Key Info: None
+Answer: No

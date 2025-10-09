@@ -1,0 +1,37 @@
+Given the following reference action sequences and the current action sequence, your task is to find the ones from the reference sequences that are doing almost the same thing as current action sequence. If there's no sequence in reference that does the same thing as current action sequence, then you should pay more attention to the ending steps, and choose ones that are doing the same thing in the latest steps. If the functionality of the current action history is not quite clear, just finding ones that exactly match the latest steps
+Note: You need to consider the meaning behind actions like "click", "type". E.g., click button 'Search' means doing the search on the typed term. We DONT want the output sequences to have the future steps of the current action history. You should find sequences that just stopping at the same point as the current actions.
+You should strictly follow the output format.
+Feel free to output "None" if you think all of the reference sequences don't match with current action sequence, and the last steps are not doing the same thing.
+
+Example:
+Reference action sequences:
+1. type textbox 'Search' 2. click button 'Search' 3. click link 'Dell G7 Laptop' 4. click 'Add to cart'
+1. type textbox 'Search' 2. click button 'Search' 3. click link 'Dell G7 Laptop' 4. click 'Add to Compare list'
+1. type textbox 'Search' 2. click button 'Search' 3. click link 'My Wish List'
+1. type textbox 'Search' press enter 2. click link 'Dell G7 Laptop' 3. click 'Add to cart'
+1. click link 'Settings' 2. click link 'My status'
+1. type textbox 'Search' 2. click button 'Search' 3. click link 'Dell G7 Laptop'
+1. type textbox 'Search' 2. click button 'Search' 3. click link 'Dell G7 Laptop' 4. click 'Add to ...' 5. click 'Shopping Cart'
+
+Current action sequence:
+1. type textbox 'Search' 2. click button 'Search' 3. click link 'OREO milk cookies' 4. click 'Add to cart'
+
+##Thought: Let's think step by step. The current action sequence do searching at first, then click 'OREO milk cookies' to view its details, and add it to the cart. I should output action sequences that are doing the same thing at the ending steps.
+
+##Output:
+1. type textbox 'Search' 2. click button 'Search' 3. click link 'Dell G7 Laptop' 4. click 'Add to cart'
+1. type textbox 'Search' press enter 2. click link 'Dell G7 Laptop' 3. click 'Add to cart'
+1. type textbox 'Search' 2. click button 'Search' 3. click link 'Dell G7 Laptop' 4. click 'Add to ...' 5. click 'Shopping Cart'
+
+
+Reference action sequences:
+1. type searchbox 'Filter by name' press enter 2. click link 'Byte Blaze / a11y-syntax-highlighting' 3. click link 'Create new...'
+1. click link 'Filter' 2. click link 'New project'
+
+Current action sequence:
+1. click link 'Create New...' 2. click link 'New project / repository'
+
+##Thought: Let's think step by step. The current action sequence clicked "Create New..." and then chose 'New project/repository' option, which means it is about to create a new project. There's no sequences that are exactly the same as the current action sequence, so I shall focus on the ending steps. However, the first one just stop at "Create New..." and not proceed, but the second one also chose to create a new project.
+
+##Output:
+1. click link 'Filter' 2. click link 'New project'

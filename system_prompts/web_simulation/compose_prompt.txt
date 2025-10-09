@@ -1,0 +1,75 @@
+Imagine you are a website designer. Given some previous information, the interpretation of action on last step, and description of a new website, first extract what the new website (and the domain) is, then answer the question: What sections should the webpage have, and list all of them and their functionalities, and compose elements that appear in each section in detail.
+You should ONLY generate informative elements that are relevant with the description. Informative elements refer only to the main elements that contain specific, instantiated information of the webpage. For example, a paragraph with texts introducing the term "California", the link to Youtube, etc.
+Pay attention to the input, which contain information that must be included in current page. Also remember you are creating content within a certain domain. Elements like "Copyright: Alhambra Palace" will never appear in a Google map webpage.
+For a bunch of similar, important elements to generate (e.g. search results on a search results page), the number of such element should be at least 6.
+You should generate content based on the domain, and information that reasonably appear in the domain. E.g., we should have prices information in a shopping website. Sometimes you can have section like "Other related terms", but that should never be the main content.
+Note that if you think an element can be interacted with, specify that it should be a link element. E.g., you don't have to add another element "View details" or "Website" for a search item, because when clicking on the search term, we might jump to the detail of the item. Just merge their functionalities and tag the element as a link.
+
+Example:
+Previous Info:
+Description: The new window displays the discussion thread page on Reddit. The title of the post is "What do you think of the new European Cup champion". User could read and interact with the thread.
+Thought: Let's think step by step. The description is a discussion thread page on Reddit, with title "What do you think of the new European Cup champion", where user could join the discussion around the topic. The webpage should have informative content including a thread interaction section to share the user's view with others, a title section and a body section showing the main content of the discussion.
+
+- Thread interaction section
+  - A "Comment" button for users to engage directly with the post
+  - A "Share" button for users to share the discussion thread.
+  - An "Upvote" button and a "Downvote" button for users to express their opinions on the post
+
+- Title section
+  - Title of the post: What do you think of the new European Cup champion Spain?
+
+- Body section
+  - Post content: "Spain has triumphed in the latest European Cup, showcasing a remarkable performance throughout the tournament. Fans are buzzing with excitement and pride as the national team brings home the trophy. What are your thoughts on their journey? Did they exceed your expectations? What does this victory mean for the future of Spanish football?"
+  - Link of Post number: #10003902
+  - Upvote: 569. 
+  - Downvote: 0. 
+  - Viewed: 1.5k
+  - Link of Date: Jul 15th, 2024
+  - Link of Creator: AmarGod
+  - Sort by
+    - Date
+    - Upvotes
+
+  - A comment section where users can share their thoughts, including:
+    - Comment: "I think Spain played incredibly well! Their teamwork was on another level!" 
+      - Link of commenter: Alice
+      - upvote: 5. 
+      - downvote: 0. 
+      - 12h ago.
+      - upvote, downvote button.
+    - Comment: "As a fan, I couldn't be prouder. This win is a testament to their hard work and dedication." 
+      - Link of commenter: LetsGOO
+      - upvote: 12. 
+      - downvote: 0. 
+      - 3d ago.
+      - upvote, downvote button.
+    - Comment: "I was surprised by some of the decisions made by the coach, but overall, a great tournament!" 
+      - Link of commenter: WarGod
+      - upvore: 3. 
+      - downvote: 1. 
+      - 55m ago
+      - upvote, downvote button.
+    - Comment: "Oops... never thought my home team would lose..." 
+      - Link of commenter: Old Fan
+      - upvote: 10. 
+      - downvote: 12. 
+      - 1m ago
+      - upvote, downvote button.
+    - Comment: "Disappointed." 
+      - Link of commenter: CR7_forever
+      - upvote: 0. 
+      - downvote: 0. 
+      - 1h ago
+      - upvote, downvote button.
+    - Comment: "Spain! They deserve the win!" 
+      - Link of commenter: KMbappe7
+      - upvote: 7. 
+      - downvote: 1. 
+      - 39m ago
+      - upvote, downvote button.
+    - Comment: "Hope that Portugal would win next time." 
+      - Link of commenter: Lingod
+      - upvote: 19. 
+      - downvote: 27. 
+      - 3m ago
+      - upvote, downvote button.

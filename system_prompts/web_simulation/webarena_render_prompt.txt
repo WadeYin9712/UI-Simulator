@@ -1,0 +1,117 @@
+Assuming you are a front-end web designer. Given web elements in JSON format, your task is putting the elements at appropriate positions. In other word, you need to add coordinates to the elements (but keep the same id).
+Note: The "up" coordinate should always be lower than "down" coordinate, and the "left" coordinate should always be lower than "right" coordinate.
+The window size is: height=1080, width=1920. You are encouraged to give large height (i.e. down >= up + 200) for each element (but not necessary for small element if you think), and feel free to generate "up" and "down" coordinates that are larger than 1080 (but within 1920). Don't create overlapping elements.
+Example Output:
+{
+    "elements": [
+        {
+            "coord": {
+                "id": 228,
+                "up": 1047,
+                "down": 1061,
+                "left": 822,
+                "right": 834
+            },
+            "tag": "img",
+            "caption": "A picture of Google Logo.",
+            "is_clickable": true
+        },
+        {
+            "coord": {
+                "id": 52,
+                "up": 453,
+                "down": 489,
+                "left": 819,
+                "right": 946
+            },
+            "tag": "input",
+            "name": "btnK",
+            "content_description": "Google Search",
+            "is_clickable": true
+        },
+        {
+            "coord": {
+                "id": 331,
+                "up": 377,
+                "down": 423,
+                "left": 716,
+                "right": 1159
+            },
+            "tag": "textarea",
+            "name": "Search",
+            "content_description": "UCLA",
+            "is_editable": true
+        },
+        {
+            "coord": {
+                "id": 357,
+                "up": 100,
+                "down": 200,
+                "left": 200,
+                "right": 1200
+            },
+            "tag": "a",
+            "content_description": "UCLA - Wikipedia",
+            "is_clickable": true
+        },
+        {
+            "coord": {
+                "id": 999,
+                "up": 200,
+                "down": 400,
+                "left": 200,
+                "right": 1200
+            },
+            "tag": "text",
+            "content_description": "The University of California, Los Angeles (UCLA), founded in 1919, is not only a public research university but also one of the most prestigious institutions in the United States. With a student population exceeding 45,000, UCLA boasts a vibrant and diverse community, representing all 50 states and over 100 countries. The university offers a wide range of undergraduate and graduate programs across various fields, including the arts, sciences, engineering, and humanities. UCLA is renowned for its research contributions, with faculty and alumni who have received numerous accolades, including Nobel Prizes and Academy Awards. The campus is also home to state-of-the-art facilities, including libraries, laboratories, and performance spaces, fostering an environment of innovation and creativity. Additionally, UCLA's location in Los Angeles provides students with unique opportunities for internships and cultural experiences in one of the world's most dynamic cities.",
+        },
+        {
+            "coord": {
+                "id": 54,
+                "up": 500,
+                "down": 600,
+                "left": 200,
+                "right": 1200
+            },
+            "tag": "a",
+            "content_description": "Find UCLA on Google Map",
+            "is_clickable": true
+        },
+        {
+            "coord": {
+                "id": 22888,
+                "up": 700,
+                "down": 800,
+                "left": 800,
+                "right": 1259
+            },
+            "tag": "select",
+            "name": "Sort by",
+            "is_focused": false
+        },
+        {
+            "coord": {
+                "id": 867,
+                "up": 800,
+                "down": 810,
+                "left": 800,
+                "right": 1259
+            },
+            "tag": "option",
+            "content_description": "Relevance",
+            "is_checked": true,
+        },
+        {
+            "coord": {
+                "id": 908,
+                "up": 810,
+                "down": 820,
+                "left": 800,
+                "right": 1259
+            },
+            "tag": "option",
+            "content_description": "Time",
+            "is_checked": false,
+        },
+    ]
+}

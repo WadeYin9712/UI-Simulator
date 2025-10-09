@@ -1,0 +1,57 @@
+You are asked to generate web task guides for the next step that are unrelated to visual adjustments. You will be provided:
+1. Elements that are commonly used in current website.
+2. Original task guide.
+3. Previous steps you have taken.
+
+You need to follow the following rules:
+    1. AVOID guides related to visual manipulation.
+    2. You have completed the Original task guide in previous steps. You should make use of the given elements to propose reasonable new guides to extend current trajectory.
+    3. Pay attention to "Newly appeared elements", elements that appear in the new state compared to the last step. You should propose as many guides based on the interactions with newly appearing elements as possible.
+    4. The new guides SHOULD be consistent with previous steps and can form a single complete task rather than multiple independent tasks. E.g., we don't want to search for one place and then explore related or nearby places.
+    5. The guides should be diverse. We don't want guides doing the same thing but on different entities. For example, we don't want to have both view the detail of A and then view the detail of B in the response.
+    6. Only give no more than {} guides, just make sure you are proposing the most common ones.
+    7. You should strictly follow the output format in the example.
+    8. Note that you cannot interact with a StaticText or generic. Interacting with it wouldn't cause any effect. So it is best not propose guides related to them. Also we want the tasks can be done on the computers.
+
+Example:
+Invariant elements:
+Link: 'My Account'
+Link: 'My Wish List'
+Link: '\ue611 My Cart'
+Combobox: '\ue615 Search'
+
+Newly appeared elements:
+RootWebArea: 'PHILIPS H6509 Wireless Headphones, Over-Ear Bluetooth Headphones with Noise Canceling Pro'
+StaticText: 'Search Results'
+Button: 'Close'
+StaticText: 'Results from Shopping Platform'
+StaticText: 'Product'
+Link: 'PHILIPS H6509 Wireless Headphones, Over-Ear Bluetooth Headphones with Noise Canceling Pro'
+Link: '12 Reviews'
+Link: 'Add Your Review'
+Generic: 'Color'
+Spinbutton: 'Qty'
+Button: 'Add to Cart'
+Link: 'Add to Wish List'
+Link: 'Add to Compare'
+StaticText: 'Product'
+Link: 'RUNOLIM Hybrid Active Noise Cancelling Headphones'
+Link: '8 Reviews'
+Link: 'Add Your Review'
+Generic: 'Color'
+Spinbutton: 'Qty' 
+Button: 'Add to Cart'
+Link: 'Add to Wish List'
+Link: 'Add to Compare'
+
+Original task guide:
+Search for 'PHILIPS H6509 Wireless Headphones, Over-Ear Bluetooth Headphones with Noise Canceling Pro'.
+Previous steps:
+["Search 'PHILIPS H6509 Wireless Headphones, Over-Ear Bluetooth Headphones with Noise Canceling Pro'."]
+
+##Thoughts:
+Let's think step by step. The original task guide is to search 'PHILIPS H6509 Wireless Headphones, Over-Ear Bluetooth Headphones with Noise Canceling Pro', and I have completed the original task guide. The current webpage shows the search results related to the 6S Wireless Noise Canceling Hi-Fi Headphones.
+I need to take the next step that is consistent with the first step searching. The newly appeared elements include the detail links of the product I want, together with functionalities like "Add to Cart", "Add to Wish List", 'Add Your Review', 'Add to Compare', etc.
+I can check the most relevant search result for its details. I can also choose to interact with the product via functionalities like add to the cart, add to the wishlist, etc.
+##Guides:
+{}

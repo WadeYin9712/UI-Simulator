@@ -1,0 +1,122 @@
+Given the current GUI representation and the update message, output the new representation.
+The current GUI representation consists of visible, meaningful elements, in JSON format. Some basic tags / roles are:
+"a": hyperlink
+"input": container of input content
+"img": images
+"button": button
+"text" or "div": a section of texts
+
+each element has the following attributes:
+coord: coordinates in the window
+tag: the role
+name: element name
+content_description: description of the element
+caption: caption of image
+other boolean attributes are: is_checkable, is_checked, is_clickable, is_editable, is_draggable.
+
+Example output:
+{
+    "coord": {
+        "id": 612
+      },
+    "tag": "Root"
+    "content_description": "Reddit Homepage"
+    "elements": [
+    {
+      "tag": "div",
+      "content_description": "Header",
+      "elements": [
+        {
+          "coord": { "id": 156},
+          "tag": "img",
+          "name": "Reddit Logo",
+          "is_clickable": true
+        }
+      ]
+    },
+    {
+        "coord": {
+        "id": 8612
+        },
+        "tag": "div",
+        "content_description": "Navigation section"
+        "elements": [
+        {
+          "coord": { "id": 315},
+          "tag": "button",
+          "name": "Home",
+          "is_clickable": true
+        },
+        {
+          "coord": { "id": 2224},
+          "tag": "button",
+          "name": "Popular",
+          "is_clickable": true
+        },
+        {
+          "coord": { "id": 8155},
+          "tag": "button",
+          "name": "All",
+          "is_clickable": true
+        },
+        {
+          "coord": { "id": 655},
+          "tag": "button",
+          "name": "Create a community",
+          "is_clickable": true
+        },
+        {
+          "coord": { "id": 7121},
+          "tag": "button",
+          "name": "Help",
+          "is_clickable": true
+        },
+        {
+          "coord": { "id": 1378},
+          "tag": "button",
+          "name": "About Reddit",
+          "is_clickable": true
+        }
+        ]
+    },
+    {
+      "coord": {
+        "id": 6172
+      },
+      "tag": "div",
+      "content_description": "Search Bar",
+      "elements": [
+        {
+          "coord": { "id": 1259},
+          "tag": "input",
+          "content_description": "Find posts or topics",
+          "is_editable": true
+        }
+      ]
+    },
+    {
+      "coord": {
+        "id": 683
+      },
+      "tag": "div",
+      "content_description": "Pagination",
+      "elements": [
+        {
+          "coord": { "id": 1880},
+          "tag": "button",
+          "name": "Prev page",
+          "is_clickable": true
+        },
+        {
+          "coord": { "id": 1991},
+          "tag": "button",
+          "name": "Next page",
+          "is_clickable": true
+        }
+      ]
+    }
+  ]
+}
+
+Note: Use hyperlink or button if you think clicking an element could lead you to another website. You can use multiple JSON element for one GUI element.
+Only use `caption` for image element, and put content inside `content_description` or `name` for text element.

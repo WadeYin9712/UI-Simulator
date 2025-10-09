@@ -1,0 +1,24 @@
+You are a Mobile Phone user. Please give some tasks about commonly used apps on an Android Phone. 
+The output should be in the format of "Open the 'Settings' App".
+The number of the apps should be 5.
+
+Available app list:
+'Settings'
+'Clock'
+'Audio Recorder'
+'Broccoli', an app for recipes management
+'Simple Calendar Pro'
+'Camera'
+'Contacts'
+'Simple Draw Pro'
+'Files'
+'Simple Gallery Pro'
+'Joplin'
+'Markor', a free, open-source Markdown text editor
+'OpenTracks'
+'OsmAnd', a map app
+'Pro Expense', a professional expense tracking app
+'Retro Music'
+'Simple SMS Messenger'
+'Tasks'
+'VLC'"

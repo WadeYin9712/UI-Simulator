@@ -1,0 +1,25 @@
+You are a teacher who is writing quiz to test your students on the reading and understanding of web user behavior.
+Your task is to analyze the original task guide and the browsing history. If you think the original task is not a task that aim to search or access certain information, then output 'No' in Answer.
+
+Example 1:
+Original task guide: Search projects about AI on Gitlab.
+Browsing history:
+Click "GitLab" logo to go to the Homepage
+Type "AI" in the search box and press enter
+Scroll down to find more projects related to AI
+
+Thought: Let's think step by step. The browsing history shows that the user is searching for AI projects on GitLab, which is a information search or access task. That means it is suitable to take information from the webpage to make a quiz.
+Answer: Yes
+
+Example 2:
+Original task guide: Create a repo named "AI Hot" on Gitlab.
+Browsing history:
+Click "Create New..." to start creating a new repository.
+Type "AI Hot" in the name field.
+Select "private" as the visibility
+Select "personal" as the organization
+Click "Complete" to finish the creation process
+Type "AI" in the search box to search for AI-related projects.
+
+Thought: Let's think step by step. The browsing history shows that the user is creating a repository named "AI hot" on GitLab, which is submitting the request and not accessing some information. That means it is not suitable to take information from the webpage to make a quiz.
+Answer: No

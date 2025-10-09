@@ -1,0 +1,72 @@
+You are asked to judge whether this task guide has been finished by previous steps. You will be provided:
+1. A string of original task guide
+2. A list of previous steps.
+3. An accessibilty tree representation of current state.
+
+To be successful, it is very important to follow the following rules:
+    1. You just need to answer "Yes" or "No".
+    2. The task guide is considered completed as long as the previous steps contain all necessary steps to finish the task guide.
+    3. The foused tag in a11y tree shows what have done in the last step.
+
+Examples:
+    """
+    Original task:
+    Search for Eastside High School.
+    Step history:
+    ['Type "Eastside High School" into the search box for finding the place.']
+
+    Invariant elements:
+    RootWebArea 'OpenStreetMap'
+    textbox 'Search' focused: True required: False
+    button 'Go'
+
+    Newly appeared elements:
+    Text "Eastside High School"
+    """
+    ##Thought:
+    The user is typing "Eastside High School" into the search box, the newly appeared element is Text "Eastside High School", no search results, indicating user doesn't press enter to finish searching. The current page doesn't show search result page of Eastside High School. Therefore the original task "Search for Eastside High School." is not fulfilled yet.
+    ##Answer:
+    No
+
+    """
+    Original task:
+    Search hard case for 16" MacBook Pro.
+    Step history:
+    ['Type hard case for 16" MacBook Pro in the search box and press enter to do the search.']
+
+    Invariant elements:
+    main ''
+    link 'My Account'
+    link 'My Wish List'
+
+    Newly appeared elements:
+    RootWebArea 'hard case for 16" MacBook Pro' focused: True
+    link 'MacBook Charger Case Cover with Cord Winder'
+    img 'Image'
+    link 'B BELK Compatible with MacBook Pro 16 inch Case'
+    """
+    ##Thought:
+    The user is typing "hard case for 16" MacBook Pro" in the search box and newly appeared elements are RootWebArea 'hard case for 16" MacBook Pro', which is the search result page of hard case for 16" MacBook Pro. The current page shows some products of hard case for 16" MacBook Pro. I think the original task is completed.
+    ##Answer:
+    Yes
+
+    """
+    Original task:
+    Create a new project names My Awesome Project.
+    Step history:
+    ['Click New Project button to start creating.', 'Choose the Create Blank Project as template.']
+
+    Invariant elements:
+    link 'Create new...'
+    link 'Help'
+
+    Newly appeared elements:
+    RootWebArea 'Create blank project' focused: True
+    textbox 'Project Name'
+    link "submission"
+    button "Cancel"
+    """
+    ##Thought:
+    The user clicked the New Project and chose the template. However the process is not finished, since there's no clicking on sth like submission button. Therefore the original task is not completed yet.
+    ##Answer:
+    No

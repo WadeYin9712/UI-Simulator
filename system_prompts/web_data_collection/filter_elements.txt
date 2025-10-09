@@ -1,0 +1,48 @@
+You are asked to filter out some webpage elements that are not often used or related to visual manipulation for building web tasks, and use natural language to describe each of the rest elements that is helpful for generating web task guides. You will be provided:
+1. A description that includes the name and functionality of the website.
+2. A list of elements that are already divided hierarchically based on their depth in the accessibility (a11y) tree structure.
+Note that the elements are divided by node depth, capturing only the upper-level elements along with their immediate children if applicable.
+
+To be successful, it is very important to follow the following rules:
+    1. You should filter out elements that are vague, or primarily about visual adjustments.
+    2. For the element that you think is useful, use natural language to summarize it if it contains some children elements. Otherwise, just output its content. For example, for [96] link 'My Wish List', you should output link 'My Wish List'.
+    3. You should filter out sign in, sign up or sign out element.
+
+Examples:
+    """
+    Website Description: 
+    1. The name of the webpage is **OpenStreetMap**.
+    2. The function of this webpage is to provide an interactive mapping service where users can view, edit, and contribute to a global map created collaboratively by individuals. It offers features such as searching for locations, finding directions, viewing GPS traces, and accessing user diaries and community information. Additionally, it allows users to zoom in and out, show their location, and share maps, making it a versatile tool for navigation and geographic information.
+    Elements:
+    ["[352] link 'GPS Traces'", [19] link 'Zoom In', [20] link 'Zoom Out', "[387] link 'User Diaries'", "[482] link 'Find directions between two points'"]
+    """
+    ##Elements:
+    1. link 'Find directions between two points'
+
+    """
+    Website Description: 
+    1. The name of the webpage is **OpenStreetMap**.
+    2. The function of this webpage is to provide an interactive mapping service where users can view, edit, and contribute to a global map created collaboratively by individuals. It offers features such as searching for locations, finding directions, viewing GPS traces, and accessing user diaries and community information. Additionally, it allows users to zoom in and out, show their location, and share maps, making it a versatile tool for navigation and geographic information.
+    Elements:
+    ["[36] heading 'OpenStreetMap logo OpenStreetMap'    [41] link 'OpenStreetMap logo OpenStreetMap'    [44] img 'OpenStreetMap logo'", "[381] link 'Edit'", "[382] button ''", "[352] link 'History'", "[35] textbox 'Search' focused: True required: False", "[495] button 'Go'", [19] link 'Zoom In', [20] link 'Zoom Out']
+    """
+    ##Elements:
+    1. textbox 'Search' focused: True required: False
+    2. button 'Go'
+
+    """
+    Website Description: 
+    1. The name of this webpage is "One Stop Market."
+    2. The function of this webpage is to serve as an online marketplace where users can browse and purchase various products across different categories such as Beauty & Personal Care, Sports & Outdoors, Clothing, Home & Kitchen, and more. It also provides functionalities for account management (like viewing the account, wish list, and signing out), searching for products, and viewing product showcases.
+    Elements:
+    ["[95] link 'My Account'", "[96] link 'My Wish List'", "[97] link 'Sign Out'", "[3838] StaticText 'Welcome to One Stop Market'", "[3832] tablist '' multiselectable: False orientation: horizontal    [3834] tabpanel ''    [2078] menu '' orientation: vertical    [2829] menuitem '\ue622 Beauty & Personal Care' hasPopup: menu    [2894] menuitem '\ue622 Sports & Outdoors' hasPopup: menu    [2904] menuitem '\ue622 Clothing, Shoes & Jewelry' hasPopup: menu    [2918] menuitem '\ue622 Home & Kitchen' hasPopup: menu    [2955] menuitem '\ue622 Office Products' hasPopup: menu    [2963] menuitem '\ue622 Tools & Home Improvement' hasPopup: menu"]
+    """
+    ##Elements:
+    1. link 'My Account'
+    2. link 'My Wish List'
+    3. horizontal tablist with vertical dropdown menus for navigating product categories
+        - menu Beauty & Personal Care
+        - menu Sports & Outdoors
+        - menu Clothing, Home & Kitchen
+        - menu Office Products
+        - menu Tools & Home Improvement

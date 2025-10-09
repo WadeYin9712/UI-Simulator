@@ -1,0 +1,150 @@
+Imagine you are a website designer. Previously you had example content of what the website should contain. However, the content is not realistic enough. Your task is detecting parts that you find unrealistic and rewriting them to make it realistic.
+Some principles of judging whether the website content is real:
+1. The name and URL should be specified, e.g. google.com, James, not something like "example.com", "Name 1".
+2. The numbers should be unordered, randomized and diversified. We don't want something like "#123456", "#123457".
+3. The elements match the functionalities of the page, and the required functionalities should be in the content. We don't want "add to cart" button to appear in a Reddit forum webpage. If we don't have "Share" button in a thread, we need to add it into the page.
+4. Checking if there are elements that is unlikely to appear in the domain. E.g., "Copyright notice: "© 2024 Alhambra Palace" will never appear in a Google map webpage. You should just remove such elements.
+Note that you should not change content that you think are realistic. If you think there's no violation, just repeat everything in "Old content" in "New content"
+You are also provided with webpage in as a reference to analyze and add border functionalities as "Structural sections". You should put "Structural sections" BEFORE informative contents. 
+Example:
+Last-step webpage:
+[1] RootWebArea 'Postmill' focused: True
+        [32] HeaderAsNonLandmark ''
+                [33] link 'Home'
+        [65] link 'Forums'
+        [66] link 'Wiki'
+        [74] searchbox 'Search query'
+        [75] link 'Notifications (0)'
+        [76] link 'Submit'
+        [12] button 'MarvelsGrantMan136' hasPopup: menu expanded: False
+        [14] main ''
+                [181] link 'Share'
+                [182] link 'Comments'
+                [18] button 'Filter on: Featured' hasPopup: menu expanded: False
+                [20] button 'Sort by: Hot' hasPopup: menu expanded: False
+                [55] StaticText 'You are not subscribed to any forum. Showing featured forums instead.'
+        [26] complementary ''
+                [56] heading 'Featured forums'
+                [82] StaticText 'There are no featured forums to display.'
+        [23] contentinfo ''
+                [59] StaticText 'Running '
+                [60] link 'Postmill'
+
+Old content: a discussion thread page on Reddit, with title "What do you think of the new European Cup champion", where user could join the discussion around the topic. The webpage should have informative content including a thread interaction section to share the user's view with others, a title section and a body section showing the main content of the discussion.
+
+- Thread interaction section
+  - An "Upvote" button and a "Downvote" button for users to express their opinions on the post
+
+- Title section
+  - Title of the post: What do you think of the new European Cup champion Spain?
+
+- Body section
+  - Post content: "Spain has triumphed in the latest European Cup, showcasing a remarkable performance throughout the tournament. Fans are buzzing with excitement and pride as the national team brings home the trophy. What are your thoughts on their journey? Did they exceed your expectations? What does this victory mean for the future of Spanish football?"
+  - Post number: #123456
+  - Upvote: 569. 
+  - Downvote: 0. 
+  - Viewed: 1.5k
+  - Date: Jul 15th, 2024
+  - Creator: Example User
+
+  - A comment section where users can share their thoughts, including:
+    - User comment: "I think Spain played incredibly well! Their teamwork was on another level!" 
+      - upvote: 5. 
+      - downvote: 0. 
+      - 12h ago.
+      - upvote, downvote button.
+    - User comment: "As a fan, I couldn't be prouder. This win is a testament to their hard work and dedication." 
+      - upvote: 12. 
+      - downvote: 0. 
+      - 3d ago.
+      - upvote, downvote button.
+    - User comment: "I was surprised by some of the decisions made by the coach, but overall, a great tournament!" 
+      - upvore: 3. 
+      - downvote: 1. 
+      - 55m ago
+      - upvote, downvote button.
+    - User comment: "Oops... never thought my home team would lose..." 
+      - upvote: 10. 
+      - downvote: 12. 
+      - 1m ago
+      - upvote, downvote button.
+
+Thought: Let's think step by step. There are some violations to the principles given above:
+Principle 1: The creator of the thread "Example User" is definitely a fake name. We need a real name here. Also we need real usernames for each comments.
+Principle 2: The Post number #123456 looks like a fake number. The number needs to be randomized.
+Principle 3: The webpage in last step contains functionalities "Share", "Comment", "Filter" to let users interact with the post, but not in the old content.
+Principle 4: There seem to be no elements that are inconsistent with the Reddit domain.
+
+New content: a discussion thread page on Reddit, with title "What do you think of the new European Cup champion", where user could join the discussion around the topic. The webpage should have informative content including a thread interaction section to share the user's view with others, a title section and a body section showing the main content of the discussion.
+Since we are still navigating in the same domain website, namely Reddit, the border structure and functionalities of the domain should be kept. But the body of the new page should focus on the thread content.
+## Structural sections
+- Header section
+  - A "Reddit" Logo which directs to the homepage.
+
+- Navigation section
+  - "Home", "Forums", "Wiki", "Notifications", "Submit", "About Reddit" buttons.
+
+- Search section 
+  - a search bar for with default content "Find posts or topics".
+
+## Informative sections
+- Thread interaction section
+  - A "Comment" button for users to engage directly with the post
+  - A "Share" button for users to share the discussion thread.
+  - An "Upvote" button and a "Downvote" button for users to express their opinions on the post
+
+- Title section
+  - Title of the post: What do you think of the new European Cup champion Spain?
+
+- Body section
+  - Post content: "Spain has triumphed in the latest European Cup, showcasing a remarkable performance throughout the tournament. Fans are buzzing with excitement and pride as the national team brings home the trophy. What are your thoughts on their journey? Did they exceed your expectations? What does this victory mean for the future of Spanish football?"
+  - Post number: #10003902
+  - Upvote: 569. 
+  - Downvote: 0. 
+  - Viewed: 1.5k
+  - Date: Jul 15th, 2024
+  - Creator: AmarGod
+  - Sort by
+    - Date
+    - Upvotes
+
+  - A comment section where users can share their thoughts, including:
+    - Alice comment: "I think Spain played incredibly well! Their teamwork was on another level!" 
+      - upvote: 5. 
+      - downvote: 0. 
+      - 12h ago.
+      - upvote, downvote button.
+    - LetsGOO comment: "As a fan, I couldn't be prouder. This win is a testament to their hard work and dedication." 
+      - upvote: 12. 
+      - downvote: 0. 
+      - 3d ago.
+      - upvote, downvote button.
+    - WarGod comment: "I was surprised by some of the decisions made by the coach, but overall, a great tournament!" 
+      - upvore: 3. 
+      - downvote: 1. 
+      - 55m ago
+      - upvote, downvote button.
+    - Old Fan comment: "Oops... never thought my home team would lose..." 
+      - upvote: 10. 
+      - downvote: 12. 
+      - 1m ago
+      - upvote, downvote button.
+    - CR7_forever comment: "Disappointed." 
+      - upvote: 0. 
+      - downvote: 0. 
+      - 1h ago
+      - upvote, downvote button.
+    - KMbappe7 comment: "Spain! They deserve the win!" 
+      - upvote: 7. 
+      - downvote: 1. 
+      - 39m ago
+      - upvote, downvote button.
+    - Lingod comment: "Hope that Portugal would win next time." 
+      - upvote: 19. 
+      - downvote: 27. 
+      - 3m ago
+      - upvote, downvote button.
+
+- Footer section
+  - Link for contribution
+  - Copyright

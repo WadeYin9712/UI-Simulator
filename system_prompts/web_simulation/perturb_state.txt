@@ -1,0 +1,119 @@
+Imagine you are a website designer. Your task is keeping the domain, structure of the given webpage unchanged, but only perturb the instantisated content within the webpage.
+For example, you may change the specific entity name or price in a shopping website, but not change functionalities buttons like "Add to cart", "search", etc.
+
+Example:
+Current webpage:
+[1] RootWebArea 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein' focused: True
+        [3] generic '' busy: 1
+                [1234] link 'My Account'
+                [1232] link 'My Wish List'
+                [1236] link 'Sign Out'
+                [1239] StaticText 'Welcome to One Stop Market'
+                [1140] link 'Skip to Content'
+                [1149] link 'store logo'
+                        [1242] img 'one_stop_market_logo'
+                [1243] link '\ue611 My Cart'
+                [2133] StaticText 'Search'
+                [1404] combobox '\ue615 Search' autocomplete: both hasPopup: listbox required: False expanded: False
+                [2136] link 'Advanced Search'
+                [1407] button 'Search' disabled: True
+                [1096] tablist '' multiselectable: False orientation: horizontal
+                        [1098] tabpanel ''
+                                [40] menu '' orientation: vertical
+                                        [791] menuitem '\ue622 Beauty & Personal Care' hasPopup: menu
+                                        [856] menuitem '\ue622 Sports & Outdoors' hasPopup: menu
+                                        [866] menuitem '\ue622 Clothing, Shoes & Jewelry' hasPopup: menu
+                                        [880] menuitem '\ue622 Home & Kitchen' hasPopup: menu
+                                        [917] menuitem '\ue622 Office Products' hasPopup: menu
+                                        [925] menuitem '\ue622 Tools & Home Improvement' hasPopup: menu
+                                        [930] menuitem '\ue622 Health & Household' hasPopup: menu
+                                        [936] menuitem '\ue622 Patio, Lawn & Garden' hasPopup: menu
+                                        [941] menuitem '\ue622 Electronics' hasPopup: menu
+                                        [1002] menuitem '\ue622 Cell Phones & Accessories' hasPopup: menu
+                                        [1017] menuitem '\ue622 Video Games' hasPopup: menu
+                                        [1030] menuitem '\ue622 Grocery & Gourmet Food' hasPopup: menu
+                [1173] link 'Home'
+                [1176] StaticText 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein'
+                [5] main ''
+                        [1177] heading 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein'
+                        [11] generic 'Availability'
+                                [13] StaticText 'IN STOCK'
+                        [1252] StaticText 'SKU'
+                        [1370] StaticText 'B08X4XF8WM'
+                        [1184] LayoutTable ''
+                                [1254] link 'Be the first to review this product'
+                        [1256] StaticText '$23.14'
+                        [1198] LayoutTable ''
+                                [1377] StaticText 'Qty'
+                                [1378] spinbutton 'Qty' required: False valuemin: 0 valuemax: 0 valuetext: 
+                                [1379] button 'Add to Cart'
+                        [1200] link 'Add to Wish List'
+                        [1201] link 'Add to Compare'
+                        [1206] link 'Skip to the end of the images gallery'
+                        [1207] img 'main product photo'
+                        [1117] button 'Previous'
+                        [1119] generic 'Image'
+                                [2139] img 'Image'
+                        [1118] button 'Next'
+                        [2122] button 'Previous'
+                        [2143] button 'Image'
+                        [2144] button 'Image'
+                        [2124] button 'Next'
+
+New webpage:
+[1] RootWebArea 'Dell G7 Game Laptop - 2080ti' focused: True
+        [3] generic '' busy: 1
+                [1234] link 'My Account'
+                [1232] link 'My Wish List'
+                [1236] link 'Sign Out'
+                [1239] StaticText 'Welcome to One Stop Market'
+                [1140] link 'Skip to Content'
+                [1149] link 'store logo'
+                        [1242] img 'one_stop_market_logo'
+                [1243] link '\ue611 My Cart'
+                [2133] StaticText 'Search'
+                [1404] combobox '\ue615 Search' autocomplete: both hasPopup: listbox required: False expanded: False
+                [2136] link 'Advanced Search'
+                [1407] button 'Search' disabled: True
+                [1096] tablist '' multiselectable: False orientation: horizontal
+                        [1098] tabpanel ''
+                                [40] menu '' orientation: vertical
+                                        [791] menuitem '\ue622 Beauty & Personal Care' hasPopup: menu
+                                        [856] menuitem '\ue622 Sports & Outdoors' hasPopup: menu
+                                        [866] menuitem '\ue622 Clothing, Shoes & Jewelry' hasPopup: menu
+                                        [880] menuitem '\ue622 Home & Kitchen' hasPopup: menu
+                                        [917] menuitem '\ue622 Office Products' hasPopup: menu
+                                        [925] menuitem '\ue622 Tools & Home Improvement' hasPopup: menu
+                                        [930] menuitem '\ue622 Health & Household' hasPopup: menu
+                                        [936] menuitem '\ue622 Patio, Lawn & Garden' hasPopup: menu
+                                        [941] menuitem '\ue622 Electronics' hasPopup: menu
+                                        [1002] menuitem '\ue622 Cell Phones & Accessories' hasPopup: menu
+                                        [1017] menuitem '\ue622 Video Games' hasPopup: menu
+                                        [1030] menuitem '\ue622 Grocery & Gourmet Food' hasPopup: menu
+                [1173] link 'Home'
+                [1176] StaticText 'Dell G7 Game Laptop - 2080ti'
+                [5] main ''
+                        [1177] heading 'Dell G7 Game Laptop - 2080ti'
+                        [11] generic 'Availability'
+                                [13] StaticText 'IN STOCK'
+                        [1252] StaticText 'SKU'
+                        [1370] StaticText 'B8XABCF8WM'
+                        [1184] LayoutTable ''
+                                [1254] link 'Be the first to review this product'
+                        [1256] StaticText '$2956'
+                        [1198] LayoutTable ''
+                                [1377] StaticText 'Qty'
+                                [1378] spinbutton 'Qty' required: False valuemin: 0 valuemax: 0 valuetext: 
+                                [1379] button 'Add to Cart'
+                        [1200] link 'Add to Wish List'
+                        [1201] link 'Add to Compare'
+                        [1206] link 'Skip to the end of the images gallery'
+                        [1207] img 'main product photo'
+                        [1117] button 'Previous'
+                        [1119] generic 'Image'
+                                [2139] img 'Image'
+                        [1118] button 'Next'
+                        [2122] button 'Previous'
+                        [2143] button 'Image'
+                        [2144] button 'Image'
+                        [2124] button 'Next'

@@ -1,0 +1,158 @@
+[
+    {
+        "coord": {
+            "id": 2
+        },
+        "tag": "a",
+        "content_description": "GitLab Homepage",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 4
+        },
+        "tag": "button",
+        "content_description": "Projects",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 5
+        },
+        "tag": "button",
+        "content_description": "Groups",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 6
+        },
+        "tag": "button",
+        "content_description": "Issues",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 7
+        },
+        "tag": "button",
+        "content_description": "Merge Requests",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 8
+        },
+        "tag": "button",
+        "content_description": "Settings",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 9
+        },
+        "tag": "button",
+        "content_description": "Help",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 10
+        },
+        "tag": "input",
+        "name": "project_name",
+        "content_description": "Enter your project name here",
+        "is_editable": true
+    },
+    {
+        "coord": {
+            "id": 12
+        },
+        "tag": "select",
+        "name": "visibility_level",
+        "is_focused": false
+    },
+    {
+        "coord": {
+            "id": 13
+        },
+        "tag": "option",
+        "content_description": "Private"
+    },
+    {
+        "coord": {
+            "id": 14
+        },
+        "tag": "option",
+        "content_description": "Internal"
+    },
+    {
+        "coord": {
+            "id": 15
+        },
+        "tag": "option",
+        "content_description": "Public"
+    },
+    {
+        "coord": {
+            "id": 16
+        },
+        "tag": "input",
+        "name": "initialize_readme",
+        "content_description": "Initialize repository with a README",
+        "is_checkable": true
+    },
+    {
+        "coord": {
+            "id": 17
+        },
+        "tag": "select",
+        "name": "project_template",
+        "is_focused": false
+    },
+    {
+        "coord": {
+            "id": 18
+        },
+        "tag": "option",
+        "content_description": "Blank"
+    },
+    {
+        "coord": {
+            "id": 19
+        },
+        "tag": "option",
+        "content_description": "Node.js"
+    },
+    {
+        "coord": {
+            "id": 20
+        },
+        "tag": "option",
+        "content_description": "Ruby on Rails"
+    },
+    {
+        "coord": {
+            "id": 21
+        },
+        "tag": "button",
+        "content_description": "Create Project",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 22
+        },
+        "tag": "button",
+        "content_description": "Cancel",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 26
+        },
+        "tag": "a",
+        "content_description": "GitLab Documentation for Creating Projects",
+        "is_clickable": true
+    }
+]

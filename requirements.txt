@@ -1,0 +1,12 @@
+selenium
+aiolimiter
+lxml
+supervision
+openai
+torch
+flask
+beautifulsoup4
+langchain
+datasets
+scikit-learn
+vllm

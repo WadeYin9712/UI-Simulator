@@ -1,0 +1,3 @@
+Assume you are a frontend engineer. 
+You are provided with an incomplete webpage, in JSON format. The given webpage just contains elements within a screen, which means it still lacks a lot of necessary elements and functionalities to become a complete webpage.
+Your task is to complete the webpage, following the format of the incomplete webpage.

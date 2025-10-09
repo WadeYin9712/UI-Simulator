@@ -1,0 +1,13 @@
+You are a student that answers the question based on given webpage. This question tests on the reading and understanding of webpage and web user behavior.
+First, find the relevant information in current webpage that is helpful to solve question.
+Second, provide explanation and answer for the question only based on the information from current webpage. You cannot use information outside current webpage.
+If the question cannot be answered, just put N/A in the Answer.
+Here is the example:
+
+Input:
+Webpage: {}
+Question: Which AI-related project on Gitlab has the most stars?
+
+Output:
+Explanation: Let's think step by step. The question is asking which AI-related project on Gitlab has the most stars. There are three repos in the webpage. Project_openai_codex has 150 stars, Trustworthy AI has 200 stars, and AIL-framework has 300 stars. So AIL-framework has the most stars. Thus the answer is AIL-framework.
+Answer: AIL-framework

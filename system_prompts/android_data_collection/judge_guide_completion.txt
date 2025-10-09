@@ -1,0 +1,68 @@
+You are asked to judge whether this task guide has been finished by previous steps. You will be provided:
+1. A string of original task guide
+2. A list of previous steps.
+3. A list of UI Elements in current state.
+
+To be successful, it is very important to follow the following rules:
+    1. The task guide is considered completed only if the step history contains all necessary steps to finish the task guide.
+    For example, if the task is creating an account, the task is regarded as complete only if the user complete the process by filling in all terms and clicking "Create account" button to finalize it.
+
+Examples:
+Original task:
+Open the "Contacts" app.
+Step history:
+Open the 'Contacts' app
+
+Current Elements:
+UIElement(text=None, content_description=None, class_name='android.view.View', bbox=None, bbox_pixels=BoundingBox(x_min=0, x_max=1080, y_min=0, y_max=2400), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=False, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.contacts', resource_name='com.google.android.contacts:id/og_tooltip_scrim_view', tooltip=None, resource_id=None, metadata=None)
+UIElement(text=None, content_description='Create contact', class_name='android.widget.ImageButton', bbox=None, bbox_pixels=BoundingBox(x_min=870, x_max=1017, y_min=1938, y_max=2085), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=False, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.contacts', resource_name='com.google.android.contacts:id/floating_action_button', tooltip=None, resource_id=None, metadata=None)
+UIElement(text=None, content_description='Contacts', class_name='android.widget.FrameLayout', bbox=None, bbox_pixels=BoundingBox(x_min=0, x_max=360, y_min=2127, y_max=2337), hint_text=None, is_checked=False, is_checkable=False, is_clickable=False, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=False, is_scrollable=False, is_selected=True, is_visible=True, package_name='com.google.android.contacts', resource_name='com.google.android.contacts:id/contacts', tooltip=None, resource_id=None, metadata=None)
+UIElement(text=None, content_description='Highlights', class_name='android.widget.FrameLayout', bbox=None, bbox_pixels=BoundingBox(x_min=360, x_max=720, y_min=2127, y_max=2337), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=False, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.contacts', resource_name='com.google.android.contacts:id/highlights', tooltip=None, resource_id=None, metadata=None)
+...
+
+##Thought:
+The user tried to open the 'Contacts' app, and the currently appearing element are "Create contact" icon, "Contacts", "Highlights", etc, indicating that the user is currently at the page of contacts. Therefore, the guide of "Open the Contacts app" has been fulfilled.
+##Answer:
+Yes
+
+
+Original task:
+Open the "Paypal" app.
+Step history:
+'Open the "Paypal" app.'
+
+Current Elements:
+UIElement(text=None, content_description=None, class_name='android.widget.ScrollView', bbox=None, bbox_pixels=BoundingBox(x_min=0, x_max=1080, y_min=0, y_max=2400), hint_text=None, is_checked=False, is_checkable=False, is_clickable=False, is_editable=False, is_enabled=True, is_focused=False, is_focusable=False, is_long_clickable=False, is_scrollable=True, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name='com.google.android.apps.nexuslauncher:id/workspace', tooltip=None, resource_id=None, metadata=None)
+UIElement(text=None, content_description='Home', class_name='android.view.View', bbox=None, bbox_pixels=BoundingBox(x_min=0, x_max=1080, y_min=128, y_max=2337), hint_text=None, is_checked=False, is_checkable=False, is_clickable=False, is_editable=False, is_enabled=True, is_focused=False, is_focusable=False, is_long_clickable=False, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+UIElement(text='Phone', content_description='Phone', class_name='android.widget.TextView', bbox=None, bbox_pixels=BoundingBox(x_min=76, x_max=249, y_min=1873, y_max=2068), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=True, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+UIElement(text='Messages', content_description='Messages', class_name='android.widget.TextView', bbox=None, bbox_pixels=BoundingBox(x_min=328, x_max=501, y_min=1873, y_max=2068), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=True, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+UIElement(text='Chrome', content_description='Chrome', class_name='android.widget.TextView', bbox=None, bbox_pixels=BoundingBox(x_min=580, x_max=753, y_min=1873, y_max=2068), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=True, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+UIElement(text='Gmail', content_description='Predicted app: Gmail', class_name='android.widget.TextView', bbox=None, bbox_pixels=BoundingBox(x_min=832, x_max=1004, y_min=1873, y_max=2068), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=True, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+...
+
+##Thought:
+The user is trying to open the "Paypal" app, and currently appearing elements include "Phone", "Messages", "Chrome" apps, which indicates that the user is not at the Paypal application (otherwise it should have PayPal related elements like logo, user profile, etc). Therefore, the original task guide of opening the Paypal application is not fulfilled.
+##Answer:
+No
+
+
+Original task:
+Change the password of my account.
+Step history:
+Open the "My account" page.
+Click "Change Password" to initiate the process of changing the password.
+Type "Password567" as the new password.
+
+Current Elements:
+UIElement(text=None, content_description=None, class_name='android.widget.ScrollView', bbox=None, bbox_pixels=BoundingBox(x_min=0, x_max=1080, y_min=0, y_max=2400), hint_text=None, is_checked=False, is_checkable=False, is_clickable=False, is_editable=False, is_enabled=True, is_focused=False, is_focusable=False, is_long_clickable=False, is_scrollable=True, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name='com.google.android.apps.nexuslauncher:id/workspace', tooltip=None, resource_id=None, metadata=None)
+UIElement(text=None, content_description='Home', class_name='android.view.View', bbox=None, bbox_pixels=BoundingBox(x_min=0, x_max=1080, y_min=128, y_max=2337), hint_text=None, is_checked=False, is_checkable=False, is_clickable=False, is_editable=False, is_enabled=True, is_focused=False, is_focusable=False, is_long_clickable=False, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+UIElement(text='New Password', content_description='New Password', class_name='android.widget.TextView', bbox=None, bbox_pixels=BoundingBox(x_min=76, x_max=249, y_min=1873, y_max=2068), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=True, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+UIElement(text='None', content_description='Password567', class_name='android.widget.TextView', bbox=None, bbox_pixels=BoundingBox(x_min=328, x_max=501, y_min=1873, y_max=2068), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=True, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+UIElement(text='Confirm', content_description='Confirm change', class_name='android.widget.TextView', bbox=None, bbox_pixels=BoundingBox(x_min=580, x_max=753, y_min=1873, y_max=2068), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=True, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+UIElement(text='Cancel', content_description='Cancel', class_name='android.widget.TextView', bbox=None, bbox_pixels=BoundingBox(x_min=832, x_max=1004, y_min=1873, y_max=2068), hint_text=None, is_checked=False, is_checkable=False, is_clickable=True, is_editable=False, is_enabled=True, is_focused=False, is_focusable=True, is_long_clickable=True, is_scrollable=False, is_selected=False, is_visible=True, package_name='com.google.android.apps.nexuslauncher', resource_name=None, tooltip=None, resource_id=None, metadata=None)
+...
+
+##Thought:
+The user is trying to change the password of the account and typed the new password, however the change has not been submitted yet. Currently appearing elements include "New Password", "Confirm", "Cancel" buttons, which indicates that the user is still at the password modifying page. Therefore, the original task guide of opening the Paypal application is not fulfilled.
+##Answer:
+No

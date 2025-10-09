@@ -1,0 +1,79 @@
+You are asked to modify a web task. You will be given a description of website and original task that correspond to the website.
+
+To be successful, it is very important to follow the following rules:
+    ##Find the name of website and figure out what kind of website is given.
+    ##Generate diverse and general entity names related to website and add to original task to make the task more specific. For example, a general entity name for shopping website could be a general product, a general entity name for map website is a general place name that one city may have several locations.
+    ##To avoid duplication, generate 15 examples. The example should avoid famous entity. For example, places like Eiffel Tower and Golden Gate are famous and specific, places like CVS and Chinese restaurants are general and diverse.
+
+Examples:
+    """
+    Website Description:
+    1. The name of the webpage is **One Stop Market**.
+    2. The function of this webpage is to serve as an online shopping platform where users can browse and purchase a variety of products across different categories such as Beauty & Personal Care, Sports & Outdoors, Clothing, Home & Kitchen, and more. It includes features for account management, product searches, and a shopping cart.    Original task:
+    Original task:
+    Search for a certain product.
+    """
+    ##Tasks:
+        1. Search for umbrella.
+        2. Search for vacuum cleaner.
+        3. Search for LED desk lamp.
+        4. Search for insulated lunch bag.
+        5. Search for smartwatch.
+        6. Search for water bottle.
+        7. Search for noise-cancelling headphones.
+        8. Search for electric toothbrush.
+        9. Search for pillow.
+        10. Search for kitchen mixer.
+        11. Search for camera.
+        12. Search for laptop.
+        13. Search for coffee grinder.
+        14. Search for facial cream.
+        15. Search for USB wall charger.
+
+    """
+    Website Description:
+    1. The name of the webpage is **Gitlab**.
+    2. The function of this webpage is to provide an interactive mapping service where users can view, edit, and contribute to a global map created collaboratively by individuals. It offers features such as searching for locations, finding directions, viewing GPS traces, and accessing user diaries and community information. Additionally, it allows users to zoom in and out, show their location, and share maps, making it a versatile tool for navigation and geographic information.
+    Original task:
+    Search for a specific place.
+    """
+    ##Tasks:
+        1. Search for CVS pharmacy.
+        2. Search for Walgreens.
+        3. Search for Walmart Supercenter.
+        4. Search for Target.
+        5. Search for Costco Wholesale.
+        6. Search for UPS station.
+        7. Search for The Home Depot.
+        8. Search for public park.
+        9. Search for Starbucks.
+        10. Search for Hilton hotel.
+        11. Search for Chase bank.
+        12. Search for carmax.
+        13. Search for Best Buy.
+        14. Search for theatre.
+        15. Search for shopping mall.
+
+    """
+    Website Description:
+    1. The name of the webpage is **OpenStreetMap**.
+    2. The function of this webpage is to provide an interactive mapping service where users can view, edit, and contribute to a global map created collaboratively by individuals. It offers features such as searching for locations, finding directions, viewing GPS traces, and accessing user diaries and community information. Additionally, it allows users to zoom in and out, show their location, and share maps, making it a versatile tool for navigation and geographic information.
+    Original task:
+    Find directions between two places on the map.
+    """
+    ##Tasks:
+        1. Find directions between Trader Joe’s and Whole Foods Market.
+        2. Find directions from Walmart Supercenter to Target..
+        3. Find directions from Best Buy to Apple Store.
+        4. Find directions between 7-Eleven and Wawa.
+        5. Find directions from Kroger to Safeway.
+        6. Find directions from Chick-fil-A to Bank of America.
+        7. Find directions between Starbucks and In N Out.
+        8. Find directions between Domino's Pizza and Shell gas station.
+        9. Find directions from McDonald's to Sam’s Club.
+        10. Find directions from Panda Express to CorePower yoga.
+        11. Find directions between AMC Theatres and Chase bank.
+        12. Find directions between LA Fitness and Petco.
+        13. Find directions from Best Buy to FedEx Office.
+        14. Find directions between Amazon Fresh and Sprouts Farmers Market.
+        15. Find directions between Macy's shopping center and Tender Greens.

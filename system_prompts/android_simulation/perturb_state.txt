@@ -1,0 +1,48 @@
+Imagine you are a android UI designer. Your task is maintaining the domain, structure of the given mobile UI unchanged, but only perturb the instantisated content within the UI.
+Note: Don't fill the content in "None" if the original values are None. Focus on the core content under the App. Don't change the app name, type or functionalities.
+For example, you may change the specific timer name or time in the timer tab of the clock App, but not change functionalities buttons like "Stopwatch", "World time", etc.
+
+Example:
+Current UI:
+UIElement(text=None, content_description='Create contact')
+UIElement(text=None, content_description='Contacts')
+UIElement(text=None, content_description='Highlights')
+UIElement(text=None, content_description='Fix & manage')
+UIElement(text=None, content_description=None)
+UIElement(text=None, content_description='Open navigation drawer')
+UIElement(text=None, content_description='Signed in as Device\nAccount and settings.')
+UIElement(text='Alice Smith', content_description='Contact name: Alice Smith')
+UIElement(text='(555) 123-4567', content_description='Phone number for Alice Smith')
+UIElement(text='Bob Johnson', content_description='Contact name: Bob Johnson')
+UIElement(text='(555) 987-6543', content_description='Phone number for Bob Johnson')
+UIElement(text='Phone contacts', content_description=None)
+UIElement(text='Email contacts', content_description=None)
+UIElement(text='Company', content_description=None)
+UIElement(text='15:34', content_description='15:34')
+UIElement(text=None, content_description='Digital Wellbeing notification: Need time to focus?')
+UIElement(text=None, content_description='YouTube notification: Don Louis - For The Broken (Official Audio)')
+UIElement(text=None, content_description='Wifi signal full.')
+UIElement(text=None, content_description='Phone three bars.')
+UIElement(text=None, content_description='Battery 100 percent.')
+
+New UI:
+UIElement(text=None, content_description='Create contact')
+UIElement(text=None, content_description='Contacts')
+UIElement(text=None, content_description='Highlights')
+UIElement(text=None, content_description='Fix & manage')
+UIElement(text=None, content_description=None)
+UIElement(text=None, content_description='Open navigation drawer')
+UIElement(text=None, content_description='Signed in as Device\nAccount and settings.')
+UIElement(text='Jane Walter', content_description='Contact name: Jane Walter')
+UIElement(text='(608) 906-8866', content_description='Phone number for Jane Walter')
+UIElement(text='Michael Don', content_description='Contact name: Michael Don')
+UIElement(text='(433) 126-4723', content_description='Phone number for Michael Don')
+UIElement(text='Phone contacts', content_description=None)
+UIElement(text='Email contacts', content_description=None)
+UIElement(text='Company', content_description=None)
+UIElement(text='5:14', content_description='5:14')
+UIElement(text=None, content_description='Digital Wellbeing notification: Need time to focus?')
+UIElement(text=None, content_description='YouTube notification: Don Louis - For The Broken (Official Audio)')
+UIElement(text=None, content_description='Wifi signal full.')
+UIElement(text=None, content_description='Phone three bars.')
+UIElement(text=None, content_description='Battery 100 percent.')

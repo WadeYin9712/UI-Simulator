@@ -1,0 +1,129 @@
+Given the following content of a GUI and the reference GUI in JSON format, translate the GUI content into new state JSON format, based on previous GUI. 
+
+Available element tags are:
+"a": hyperlink
+"input": container of input content
+"img": images
+"button": button
+"select": a drop-down list with options
+"option": options within "select" tag
+"text" or "div": a section of texts
+"textarea": textbox to fill in.
+
+each element has the following attributes:
+coord: coordinates in the window
+tag: the role
+name: element name
+content_description: description of the element
+caption: caption of image
+other boolean attributes are: is_checkable, is_checked, is_clickable, is_editable, is_draggable.
+Example output:
+{
+    "elements": [
+        {
+            "coord": {
+                "up": 1047,
+                "down": 1061,
+                "left": 822,
+                "right": 834
+            },
+            "tag": "img",
+            "caption": "A picture of Google Logo.",
+            "is_clickable": true
+        },
+        {
+            "coord": {
+                "up": 453,
+                "down": 489,
+                "left": 819,
+                "right": 946
+            },
+            "tag": "input",
+            "name": "btnK",
+            "content_description": "Google Search",
+            "is_clickable": true
+        },
+        {
+            "coord": {
+                "up": 377,
+                "down": 423,
+                "left": 716,
+                "right": 1159
+            },
+            "tag": "textarea",
+            "name": "Search",
+            "content_description": "UCLA",
+            "is_editable": true
+        },
+        {
+            "coord": {
+                "up": 100,
+                "down": 200,
+                "left": 200,
+                "right": 1200
+            },
+            "tag": "a",
+            "content_description": "UCLA - Wikipedia",
+            "is_clickable": true
+        },
+        {
+            "coord": {
+                "up": 200,
+                "down": 400,
+                "left": 200,
+                "right": 1200
+            },
+            "tag": "text",
+            "content_description": "The University of California, Los Angeles (UCLA), founded in 1919, is not only a public research university but also one of the most prestigious institutions in the United States. With a student population exceeding 45,000, UCLA boasts a vibrant and diverse community, representing all 50 states and over 100 countries. The university offers a wide range of undergraduate and graduate programs across various fields, including the arts, sciences, engineering, and humanities. UCLA is renowned for its research contributions, with faculty and alumni who have received numerous accolades, including Nobel Prizes and Academy Awards. The campus is also home to state-of-the-art facilities, including libraries, laboratories, and performance spaces, fostering an environment of innovation and creativity. Additionally, UCLA's location in Los Angeles provides students with unique opportunities for internships and cultural experiences in one of the world's most dynamic cities.",
+        },
+        {
+            "coord": {
+                "up": 500,
+                "down": 600,
+                "left": 200,
+                "right": 1200
+            },
+            "tag": "a",
+            "content_description": "Find UCLA on Google Map",
+            "is_clickable": true
+        },
+        {
+            "coord": {
+                "up": 700,
+                "down": 800,
+                "left": 800,
+                "right": 1259
+            },
+            "tag": "select",
+            "name": "Sort by",
+            "is_focused": false
+        },
+        {
+            "coord": {
+                "up": 800,
+                "down": 810,
+                "left": 800,
+                "right": 1259
+            },
+            "tag": "option",
+            "content_description": "Relevance",
+            "is_checked": true,
+        },
+        {
+            "coord": {
+                "up": 810,
+                "down": 820,
+                "left": 800,
+                "right": 1259
+            },
+            "tag": "option",
+            "content_description": "Time",
+            "is_checked": false,
+        },
+    ]
+}
+
+Note: Use hyperlink ("a" tag) or "button" tag if you think clicking the element could redirect you to another website. E.g., If the website is a search result page, remember to use "a" tag for each search result to allow access to it.
+The "up" coordinate should always be lower than "down" coordinate, and the "left" coordinate should always be lower than "right" coordinate. Only use caption for image element, and put content inside `content_description` or `name` for text element.
+The window size is: height=1080, width=1920. Please leave enough space if you think certain element needs that much. Don't create overlapping elements.
+Don't miss any composed content.

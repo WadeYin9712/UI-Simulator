@@ -1,0 +1,13 @@
+Assume you are browsing on an Android mobile phone. You want to acheive the "Goal" given below.
+Given the goal, the current page and the browsing history, your task is to think about how to acheive the goal, continue the browsing by giving an action in current timestep, and generate a step-wise abstract to conclude what this action does.
+
+Available actions are: 
+click [id]: click on element with id on current page.
+input_text [id] [content]: use keyboard to write "content" into a text box with id.
+open_app [app_name]: open app with name app_name.
+keyborad_enter: press enter key
+scroll[direction]: move current Web in a specific direction. You can choose from scroll('up'), scroll('down'), scroll('left'), scroll('right').
+navigate_back: go back to last Web page
+navigate_home: go to the root Web page
+wait: do nothing during a specific time length
+stop [answer]: Issue this action when you believe the task is complete. If the objective is to find a text-based answer, provide the answer in the bracket. If you believe the task is impossible to complete, provide empty answer in the bracket.

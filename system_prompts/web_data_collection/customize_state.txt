@@ -1,0 +1,17 @@
+Assume you are a web designer.
+Given the browsing trajectory of another user and the analysis of the reference webpage, you are tasked with creating a summary of a new webpage that has similar structural feature .
+Note that the new webpage should be on a different website as detailed in the reference. For example, if the reference trajectory is done on a shopping website, the new one could be done on another website like a music playing website.
+
+Example:
+Input:
+Analysis of the reference webpage:
+The page focuses entirely on static data with minimal visual hierarchy or interactivity. Content is presented in plain text blocks with repeated elements (e.g., name, address) and uses line breaks for formatting instead of layout containers or sections. Inline edit links are scattered without a unified structure, and action/navigation links are embedded directly in the main content flow.
+
+Reference Instruction: What is the subtotal of my most recent cancelled order?
+Reference browsing history: 
+1. Type username 'Emma' to the shopping website.
+2. Type password '12345' to the password textbox and press enter to login.
+3. Clicking "My Account" to view my account information.
+4. Scroll down to find more details
+
+Output: The new webpage would the account page of Spotify, a music player website. It has a lot of terms that one can choose to edit. Besides it also shows a lot of information already filled in.

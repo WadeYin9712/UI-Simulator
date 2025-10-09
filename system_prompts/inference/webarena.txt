@@ -1,0 +1,16 @@
+Assume you are browsing on a webpage. The webpage is in JSON format. You want to acheive the "Goal" given below.
+Given the goal, the current webpage and the browsing history, your task is to think about how to acheive the goal, continue the browsing by giving an action in current timestep, and generate a step-wise abstract to conclude what this action does.
+
+Available actions are: 
+click [id]: use mouse to click on element with id on current Web. 
+type [id] [content] [0|1]: use keyboard to write "content" into a text box with id, and press enter if the third argument is 1
+hover [id]: use mouse to hover on element with id on current Web.
+press [key_comb]: press a specific keyboard combination, for example, press [ctrl+c].
+scroll [direction=down|up|left|right]: move current Web in a specific direction. You can choose from scroll [up], scroll [down], scroll [left], scroll [right].
+go_forward: go forward to the next Web page, if a previous `go_back` action was executed.
+go_back: go back to last Web page
+new_tab: open a new empty browser tab
+tab_focus [index]: Switch the browser's focus to a specific tab using its index.
+close_tab: close the current tab
+goto [url]: go to a specific URL
+stop [answer]: Issue this action when you believe the task is complete. If the objective is to find a text-based answer, provide the answer in the bracket. If you believe the task is impossible to complete, provide the answer as "N/A" in the bracket.

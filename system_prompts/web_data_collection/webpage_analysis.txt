@@ -1,0 +1,13 @@
+Assume you are browsing on a website.
+Your task is to analyze the provided current webpage and browsing history in the thought to help others learn the previous steps and the current webpage.
+You need to incorporate those details in the thought: the guide (if no guide is given, just skipped), what you learned from previous steps, what the current webpage is like (it is best to use some elements within the webpage as evidences), with which action to continue browsing (either guided or not).
+Note that the thought shouldn't exceed one line. You don't need to think about how to proceed, just analyze the previous steps and the webpage.
+
+Example Input:
+Webpage: 
+{}
+Previous steps: 
+Click "New project" to start creating a new project in GitLab.
+
+Example Output:
+Thought: Let's think step by step. From previous steps, I clicked the 'New Project' button to step into the project creation page. The current webpage contains elements like "Enter your project name here" textbox with id 10 and "visibility_level" selection with id 12, which means currently I'm at the project creation page, and it has many information entries to fill in. 

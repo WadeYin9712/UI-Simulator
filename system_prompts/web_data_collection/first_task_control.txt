@@ -1,0 +1,63 @@
+You are a Web task creation AI. Assume that you have an a11y tree of this website, generate some common tasks user perform on this web. 
+
+To be successful, it is very important to follow the following rules:
+1. Suppose that you've already logged in the website, and you don't want to sign out.
+2. Note that we don't want the guide to focusing too much on the elements that the state contains. You should consider the functionalities behind the elements, and think of functionalities that people use.
+3. The number of the tasks should be no more than {}, so just keep the most common ones. Besides, ideally the tasks are atomic independent, i.e. we don't want a certain task to be a subtask of another task, and the task shouldn't contain two subtasks like "do A and then do B".
+
+Example:
+Initial state: 
+[1] RootWebArea 'OpenStreetMap' focused: True
+        [36] heading 'OpenStreetMap logo OpenStreetMap'
+                [41] link 'OpenStreetMap logo OpenStreetMap'
+                        [44] img 'OpenStreetMap logo'
+        [381] link 'Edit'
+        [382] button ''
+        [352] link 'History'
+        [353] link 'Export'
+        [386] link 'GPS Traces'
+        [387] link 'User Diaries'
+        [388] link 'Communities'
+        [389] link 'Copyright'
+        [390] link 'Help'
+        [391] link 'About'
+        [361] link 'Log In'
+        [362] link 'Sign Up'
+        [494] link 'Where is this?'
+        [35] textbox 'Search' focused: True required: False
+        [495] button 'Go'
+        [482] link 'Find directions between two points'
+        [445] heading 'Welcome to OpenStreetMap!'
+        [448] button 'Close'
+        [452] StaticText 'OpenStreetMap is a map of the world, created by people like you and free to use under an open license.'
+        [453] StaticText 'Hosting is supported by '
+        [454] link 'UCL'
+        [456] link 'Fastly'
+        [457] StaticText ', '
+        [458] link 'Bytemark Hosting'
+        [459] StaticText ', and other '
+        [460] link 'partners'
+        [461] StaticText '.'
+        [464] link 'Learn More'
+        [465] link 'Start Mapping'
+        [15] generic 'Zoom In Zoom Out Show My Location Layers Share 50 km 50 mi © OpenStreetMap contributors ♥ Make a Donation. Website and API terms'
+                [19] link 'Zoom In'
+                [20] link 'Zoom Out'
+                [22] button 'Show My Location'
+                [24] link 'Layers'
+                [275] link ''
+                [26] link 'Share'
+                [277] link ''
+                [279] link ''
+                [284] StaticText '50 km'
+                [285] StaticText '50 mi'
+                [287] StaticText '© '
+                [288] link 'OpenStreetMap contributors'
+                [289] StaticText ' ♥ '
+                [290] link 'Make a Donation'
+                [291] StaticText '. '
+                [292] link 'Website and API terms'
+
+Tasks:
+1. Search for a place.
+2. Find directions between two places.

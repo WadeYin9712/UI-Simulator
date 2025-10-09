@@ -1,0 +1,132 @@
+You are a teacher who is writing quiz to test your students on the reading and understanding of webpage.
+The webpage should be either:
+1. demonstrating detailed information for one object, or
+2. containing information for multiple objects, and some of them are different and comparable.
+First, analyze the webpage. If you think the webpage is demonstrating detailed information for one object, put "Yes" in "Answer". Otherwise put "No".
+Second, you need to find relevant information that is useful for making quiz from the current webpage, such as specific numbers, ranking, entity names. If you think the webpage is wrapping information for multiple objects in a table, the questions you ask should be concentrating on the comparison of the information, or features that are in common.
+Note: You need to specify the full name of entity in each question. Don't use terms like "this page", "this item". Don't ask questions about layout, e.g., buttons, textbox, or details that most people don't care, e.g. the contributor, the url of the site, etc.
+Don’t always use interrogative sentences like “what” or “which.” Instead, try using declarative sentences like "tell me ..." or "show me ...."
+
+Example 1:
+Webpage: 
+[1] RootWebArea 'Carnegie Mellon University | OpenStreetMap' focused: True
+    [14] heading 'OpenStreetMap logo OpenStreetMap'
+    ...(omit for brevity)
+    [627] StaticText 'University '
+    [630] link 'Carnegie Mellon University, Pittsburgh, Allegheny County, 15213, United States'
+    [624] link 'More results'
+    ...(omit for brevity)
+
+Thought: Let's think step by step. The current webpage is a search result of 'Carnegie Mellon University' on OpenStreetMap website. The searched result only contain detailed information about CMU, which means it is not applicable to compare with other thing. Thus the Answer should be "Yes", and I shall ask questions that are about details of CMU.
+There are details like the address of CMU, the zip code. I'd like to ask questions about the details.
+Answer: Yes
+Questions: 
+1. Show me the address of Carnegie Mellon University.
+2. What is the zip code of CMU?
+
+Example 2:
+Webpage:
+[7555] RootWebArea 'My Orders' focused: True
+    ...(omit for brevity)
+    [8655] main ''
+        [8700] heading 'My Orders'
+        [8701] table 'Orders'
+            [8724] caption ''
+            [8757] row ''
+                [8822] columnheader 'Order #' required: False
+                [8823] columnheader 'Date' required: False
+                [8824] columnheader 'Order Total' required: False
+                [8825] columnheader 'Status' required: False
+                [8826] columnheader 'Action' required: False
+            [8758] row ''
+                [8827] gridcell '000000170' required: False
+                [8828] gridcell '5/17/23' required: False
+                [8829] gridcell '$365.42' required: False
+                [8830] gridcell 'Canceled' required: False
+                [8831] gridcell 'View OrderReorder' required: False
+                    [8952] link 'View Order'
+                    [8953] link 'Reorder'
+            [8759] row ''
+                [8832] gridcell '000000189' required: False
+                [8833] gridcell '5/2/23' required: False
+                [8834] gridcell '$754.99' required: False
+                [8835] gridcell 'Pending' required: False
+                [8836] gridcell 'View OrderReorder' required: False
+                    [8959] link 'View Order'
+                    [8960] link 'Reorder'
+            [8760] row ''
+                [8837] gridcell '000000188' required: False
+                [8838] gridcell '5/2/23' required: False
+                [8839] gridcell '$2,004.99' required: False
+                [8840] gridcell 'Pending' required: False
+                [8841] gridcell 'View OrderReorder' required: False
+                    [8966] link 'View Order'
+                    [8967] link 'Reorder'
+            [8761] row ''
+                [8842] gridcell '000000187' required: False
+                [8843] gridcell '5/2/23' required: False
+                [8844] gridcell '$1,004.99' required: False
+                [8845] gridcell 'Pending' required: False
+                [8846] gridcell 'View OrderReorder' required: False
+                    [8973] link 'View Order'
+                    [8974] link 'Reorder'
+            [8762] row ''
+                [8847] gridcell '000000180' required: False
+                [8848] gridcell '3/11/23' required: False
+                [8849] gridcell '$65.32' required: False
+                [8850] gridcell 'Complete' required: False
+                [8851] gridcell 'View OrderReorder' required: False
+                    [8980] link 'View Order'
+                    [8981] link 'Reorder'
+            [8763] row ''
+                [8852] gridcell '000000166' required: False
+                [8853] gridcell '3/10/23' required: False
+                [8854] gridcell '$17.99' required: False
+                [8855] gridcell 'Complete' required: False
+                [8856] gridcell 'View OrderReorder' required: False
+                    [8987] link 'View Order'
+                    [8988] link 'Reorder'
+            [8764] row ''
+                [8857] gridcell '000000161' required: False
+                [8858] gridcell '2/27/23' required: False
+                [8859] gridcell '$762.18' required: False
+                [8860] gridcell 'Complete' required: False
+                [8861] gridcell 'View OrderReorder' required: False
+                    [8994] link 'View Order'
+                    [8995] link 'Reorder'
+            [8765] row ''
+                [8862] gridcell '000000156' required: False
+                [8863] gridcell '2/24/23' required: False
+                [8864] gridcell '$231.54' required: False
+                [8865] gridcell 'Canceled' required: False
+                [8866] gridcell 'View OrderReorder' required: False
+                    [9001] link 'View Order'
+                    [9002] link 'Reorder'
+            [8766] row ''
+                [8867] gridcell '000000158' required: False
+                [8868] gridcell '2/11/23' required: False
+                [8869] gridcell '$174.99' required: False
+                [8870] gridcell 'Canceled' required: False
+                [8871] gridcell 'View OrderReorder' required: False
+                    [9008] link 'View Order'
+                    [9009] link 'Reorder'
+            [8767] row ''
+                [8872] gridcell '000000157' required: False
+                [8873] gridcell '2/9/23' required: False
+                [8874] gridcell '$185.32' required: False
+                [8875] gridcell 'Complete' required: False
+                [8876] gridcell 'View OrderReorder' required: False
+                    [9015] link 'View Order'
+                    [9016] link 'Reorder'
+    ...(omit for brevity)
+
+
+Thought: Let's think step by step. The webpage shows a table of the order history that contains a lot of previous orders. Each order history has information like order ID, date, price and status, and they are definitely able to be compared. Thus, the Answer should be "No".
+We could ask questions about comparing order total, date, and asking for specific information of the requested order.
+Answer: No
+Questions: 
+1. Tell me the order number of my most recent cancelled order.
+2. Get the order total of my most recent pending order.
+3. What is the order number of the most recent complete order?
+4. Show me the order number of the order that has the highest total price.
+5. How much I spend on 2/9/23 on shopping at One Shop Market?

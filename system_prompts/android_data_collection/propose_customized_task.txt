@@ -1,0 +1,47 @@
+You are an Android task creation AI. Given the UI of a mobile phone, generate a common task user perform on this UI, and new browsing history adapted from the given browsing history.
+The reference task and browsing history is based on another UI that has the similar functionalities but with different object. So you should propose task based on content from currently given entities and content.
+
+To be successful, it is very important to follow the following rules:
+1. The new task should strictly have the same task type as the reference. Don't change the task type
+2. Don't change the procedure in the browsing history. Just change the entity names of objects (products, items), not functionalities.
+If the reference browsing history is "None", then put "None" in the new browsing history. Don't imagine steps that are doing different things from reference browsing history.
+
+Example:
+Current UI:
+UI element 0: UIElement(text=None, content_description='Back')
+UI element 1: UIElement(text='Madrid', content_description=None)
+UI element 2: UIElement(text=None, content_description='Back')
+UI element 3: UIElement(text=None, content_description='Switch input method')
+UI element 4: UIElement(text=None, content_description='More features')
+UI element 5: UIElement(text=None, content_description='Voice input')
+......
+UI element 35: UIElement(text=None, content_description='Symbol keyboard')
+UI element 36: UIElement(text=None, content_description=',')
+UI element 37: UIElement(text=None, content_description='Emoji button')
+UI element 38: UIElement(text=None, content_description='Space')
+UI element 39: UIElement(text=None, content_description='.')
+UI element 40: UIElement(text=None, content_description='Search')
+UI element 41: UIElement(text='Settings  Clock  Audio Recorder  Broccoli  Simple Calendar Pro  Camera  Contacts  Simple Draw Pro  Files  Simple Gallery Pro  Joplin  Markor  OpenTracks  OsmAnd  Pro Expense  Retro Music  Simple SMS Messenger  Tasks  VLC', content_description=None)
+UI element 42: UIElement(text='15:34', content_description='11:34')
+UI element 43: UIElement(text=None, content_description='Digital Wellbeing notification: Need time to focus?')
+UI element 44: UIElement(text=None, content_description='YouTube notification: Don Louis - For The Broken (Official Audio)')
+UI element 45: UIElement(text=None, content_description='Wifi signal full.')
+UI element 46: UIElement(text=None, content_description='Phone signal full.')
+UI element 47: UIElement(text=None, content_description='Battery 100 percent.')
+
+
+Reference task:
+Add Rome as a new city in the Clock app.
+
+Reference browsing history: 
+1. Open the Clock app.
+2. Click "Add city" to add time for a new city.
+3. Type "Rome" into the search box to search for the city.
+
+Task:
+Add Madrid as a new city in the Clock app.
+
+New browsing history:
+1. Open the Clock app.
+2. Click "Add city" to add time for a new city.
+3. Type "Madrid" into the search box to search for the city.

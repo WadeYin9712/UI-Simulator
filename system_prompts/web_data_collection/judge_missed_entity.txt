@@ -1,0 +1,12 @@
+You are asked to judge whether this task guide is a task guide that you feel like there is entity name missed. You will be given an original task guide.
+Some examples that you should answer "Yes":
+Search for a specific product.
+Find direction between two places.
+Create a new project.
+
+Some examples that you should answer "No":
+Explore on this website.
+Fork this project.
+Add this product to the cart.
+
+To be successful, you just need to answer "Yes" or "No".

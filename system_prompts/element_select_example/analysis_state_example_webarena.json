@@ -1,0 +1,146 @@
+[
+    {
+        "coord": {
+            "id": 15
+        },
+        "tag": "a",
+        "content_description": "Search results for AI projects",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 16
+        },
+        "tag": "a",
+        "content_description": "Project_openai_codex",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 19
+        },
+        "tag": "text",
+        "content_description": "Date: 2024-08-24",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 20
+        },
+        "tag": "text",
+        "content_description": "Stars: 150",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 21
+        },
+        "tag": "text",
+        "content_description": "Forks: 30",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 22
+        },
+        "tag": "text",
+        "content_description": "Merge Requests: 5",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 17
+        },
+        "tag": "a",
+        "content_description": "Trustworthy AI",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 23
+        },
+        "tag": "text",
+        "content_description": "Date: 2024-08-15",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 24
+        },
+        "tag": "text",
+        "content_description": "Stars: 200",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 25
+        },
+        "tag": "text",
+        "content_description": "Forks: 45",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 26
+        },
+        "tag": "text",
+        "content_description": "Merge Requests: 8",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 18
+        },
+        "tag": "a",
+        "content_description": "AIL-framework",
+        "is_clickable": true
+    },
+    {
+        "coord": {
+            "id": 27
+        },
+        "tag": "text",
+        "content_description": "Date: 2024-07-30",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 28
+        },
+        "tag": "text",
+        "content_description": "Stars: 300",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 29
+        },
+        "tag": "text",
+        "content_description": "Forks: 60",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 30
+        },
+        "tag": "text",
+        "content_description": "Merge Requests: 10",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 1
+        },
+        "tag": "img",
+        "content_description": "GitLab Logo",
+        "is_clickable": false
+    },
+    {
+        "coord": {
+            "id": 2
+        },
+        "tag": "button",
+        "content_description": "Search AI Projects",
+        "is_clickable": true
+    }
+]

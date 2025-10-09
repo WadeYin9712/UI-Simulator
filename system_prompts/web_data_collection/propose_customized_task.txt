@@ -1,0 +1,66 @@
+You are a Web task creation AI. Given the a11y tree of a website, generate a common task user perform on this web, and new browsing history adapted from the given browsing history.
+The reference task and browsing history is based on another webpage that has the similar functionalities but with different object. So you should propose task based on content from currently given entities and content.
+
+To be successful, it is very important to follow the following rules:
+1. Suppose that you've already logged in the website, and you don't want to sign out.
+2. The new task should strictly have the same task type as the reference. Don't change the task type
+3. Don't change the procedure in the browsing history. Just change the entity names of objects (products, items), not functionalities.
+If the reference browsing history is "None", then put "None" in the new browsing history. Don't imagine steps that are doing different things from reference browsing history.
+
+Example:
+Current webpage:
+[1] RootWebArea 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein' focused: True
+        [3] generic '' busy: 1
+                [1234] link 'My Account'
+                [1232] link 'My Wish List'
+                [1236] link 'Sign Out'
+                [1239] StaticText 'Welcome to One Stop Market'
+                [1140] link 'Skip to Content'
+                [1149] link 'store logo'
+                        [1242] img 'one_stop_market_logo'
+                [1243] link '\ue611 My Cart'
+                [2133] StaticText 'Search'
+                [1404] combobox '\ue615 Search' autocomplete: both hasPopup: listbox required: False expanded: False
+                [2136] link 'Advanced Search'
+                ...
+                [1173] link 'Home'
+                [1176] StaticText 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein'
+                [5] main ''
+                        [1177] heading 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein'
+                        [11] generic 'Availability'
+                                [13] StaticText 'IN STOCK'
+                        [1252] StaticText 'SKU'
+                        [1370] StaticText 'B08X4XF8WM'
+                        [1184] LayoutTable ''
+                                [1254] link 'Be the first to review this product'
+                        [1256] StaticText '$23.14'
+                        [1198] LayoutTable ''
+                                [1377] StaticText 'Qty'
+                                [1378] spinbutton 'Qty' required: False valuemin: 0 valuemax: 0 valuetext: 
+                                [1379] button 'Add to Cart'
+                        [1200] link 'Add to Wish List'
+                        [1201] link 'Add to Compare'
+                        [1206] link 'Skip to the end of the images gallery'
+                        [1207] img 'main product photo'
+                        [1117] button 'Previous'
+                        [1119] generic 'Image'
+                                [2139] img 'Image'
+                        [1118] button 'Next'
+                        [2122] button 'Previous'
+                        [2143] button 'Image'
+                        [2144] button 'Image'
+                        [2124] button 'Next'
+
+Reference task:
+Add 'Dell G7 Gaming Laptop - 256GB' to the cart.
+
+Reference browsing history: 
+1. Search for "Dell G7 Gaming Laptop"
+2. Click 'Dell G7 Gaming Laptop - 256GB' to view its details.
+
+Task:
+Add 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein' to the cart.
+
+New browsing history:
+1. Search for "Milkman Bonus Bundle"
+2. Click 'Milkman Bonus Bundle - 10 Packets Low-Fat Milk + 2 Packets Chocolate Milk with 18g Protein' to view its details.

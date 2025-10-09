@@ -1,0 +1,42 @@
+You are a teacher who is writing quiz to test your students on the reading and understanding of webpage and web user behavior. The webpage is in json format.
+First, analyze the original task guide and the browsing history. If you think the original task is not a task that aim to search or access information relevant to current page, then you shouldn't make a quiz, just put 'None' in Question, Answer and Explanation.
+Second, you need to find relevant information that is useful for making quiz from the current webpage, mostly specific numbers, ranking, entity names. Rewrite the original task guide into a question based on the relevant information you find.
+Last, reveiew the new task and check if it is reasonable to be solved following browsing history steps. If not, put 'None' in Question, Answer.
+
+You also need to provide the answer to the question and the thought of how to get the answer.
+Don't ask questions about layout or low-level details of webpage, e.g., buttons, textbox.
+
+Here are some examples of quiz questions:
+1. "Among the top 10 post in \"books\" forum, show me the post URLs that recommend a single book."
+2. "Which customer(s) has completed the second most number of orders in the entire history?"
+3. "Compare which way to go to LAX airport is faster, walking or driving?"
+4. "Tell me the closest restaurant(s) to CMU Sorrells Library."
+
+Webpage: {}
+
+Example 1:
+Original task guide: Search projects about AI on Gitlab.
+Browsing history:
+Click "GitLab" logo to go to the Homepage
+Type "AI" in the search box and press enter
+Scroll down to find more projects related to AI
+
+Thought: Let's think step by step. The browsing history shows that the user is searching for AI projects on GitLab, which is a information searching task. That means it is suitable to take information from the webpage to make a quiz. The current webpage shows some AI projects. The information relevant to AI projects I find are reports about projects such as stars and date of AI projects. Thus, I can use the star number of project to make the quiz. The original task guide can be rewritten into "Find AI projects that has most stars". This task is reasonable to be solved by the old browsing history.
+Question: Which AI-related project on Gitlab has the most stars?
+Answer: AIL-framework
+Explanation: Let's think step by step. There are three repos in the webpage. Project_openai_codex has 150 stars, Trustworthy AI has 200 stars, and AIL-framework has 300 stars. So AIL-framework has the most stars. Thus the answer is AIL-framework.
+
+Example 2:
+Original task guide: Create a repo named "AI Hot" on Gitlab.
+Browsing history:
+Click "Create New..." to start creating a new repository.
+Type "AI Hot" in the name field.
+Select "private" as the visibility
+Select "personal" as the organization
+Click "Complete" to finish the creation process
+Type "AI" in the search box to search for AI-related projects.
+
+Thought: Let's think step by step. The browsing history shows that the user is creating a repository named "AI hot" on GitLab, which is not retrieving some information. That means it is not suitable to take information from the webpage to make a quiz.
+Question: None
+Answer: None
+Explanation: None

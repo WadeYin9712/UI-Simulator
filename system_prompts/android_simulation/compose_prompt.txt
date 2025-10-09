@@ -1,0 +1,44 @@
+Imagine you are a UI designer. Given some previous information, the interpretation of action on last step, and description of a new page on a mobile phone, first extract what the new page is, then answer the question: What sections should the page have, and compose elements in detail.
+You should ONLY generate informative elements that are relevant with the description. Informative elements refer only to the main elements that contain specific, instantiated information of the webpage. For example, a paragraph with texts introducing the term "California", the link to Youtube, etc.
+Pay attention to the input, which contain information that must be included in current page. Also remember you are creating content within a certain domain. Elements like "Copyright: Alhambra Palace" will never appear in a Google map webpage.
+For a bunch of similar, important elements to generate (e.g. search results on a search results page), the number of such element should be at least 10.
+
+
+Example:
+Previous Info:
+Description: The new window displays the app of the contacts on the phone. User could check the existing contacts and make phone call to others.
+
+Thought: Let's think step by step. The description is a page of Contacts app, where user could check the existing contacts and make phone call to others. The webpage should have informative content including some contacts, functions to edit the contact infos and make phone calls, etc.
+
+Element 1: A full-screen background container view from the Contacts app. It is visible and clickable but has no text or content description.
+Element 2: A floating action button labeled "Create contact" in the bottom-right area of the screen, represented by an ImageButton. It's enabled, clickable, and ready to create a new contact.
+Element 3: A bottom navigation tab for "Contacts". It's not clickable (likely already selected), and is currently highlighted as the active tab.
+Element 4: A bottom navigation tab labeled "Highlights", which is clickable and focusable. It allows switching to a different section in the app.
+Element 5: Another bottom navigation tab labeled "Fix & manage", intended for managing or fixing contact-related tasks. It’s also clickable and visible.
+Element 6: A horizontal scrollable chips container near the top, likely used to filter contacts or select categories like “Phone contacts” or “Email contacts”.
+Element 7: A hamburger menu button (navigation drawer) in the top-left corner of the screen, allowing the user to open the navigation menu.
+Element 8: A circular profile image or account button that says "Signed in as Device" when long-pressed. Likely switches accounts or opens settings.
+Element 9: A list item for "Alice Nguyen", with a circular avatar showing initials "AN". Subtitle reads: "Mobile • +1 (555) 123-4567". The item is clickable and opens contact details.
+Element 10: A list item for "Brandon Lee", avatar with a profile picture. Subtitle: "Work • brandon@workmail.com". Clickable and interactive.
+Element 11: A list item for "Carmen Díaz", avatar with initials "CD". Subtitle: "Mobile • +34 612 345 678". Clickable and opens contact card.
+Element 12: A list item for "Daniel O'Connor", avatar with initials "DO". Subtitle: "Home • +44 20 7946 0958". The item is focusable and clickable.
+Element 13: A list item for "Emily Zhang", avatar with a profile photo. Subtitle: "Company • emily.z@acmeinc.com". Tapping it opens organizational details.
+Element 14: A list item for "Farah Al-Mansouri", avatar with initials "FA". Subtitle: "Mobile • +971 50 123 4567".
+Element 15: A list item for "George Kim", avatar with profile picture. Subtitle: "Work • g.kim@techhub.co.kr".
+Element 16: A list item for "Hannah Schultz", avatar with initials "HS". Subtitle: "Home • +49 30 123456".
+Element 17: A list item for "Ivan Petrov", avatar with initials "IP". Subtitle: "Mobile • +7 495 123-45-67".
+Element 18: A list item for "Julia Martins", avatar with initials "JM". Subtitle: "Company • julia@brazilbiz.com".
+Element 19: A list item for "Kevin Patel", avatar with profile image. Subtitle: "Mobile • +91 98765 43210".
+Element 20: A list item for "Lena Kowalski", avatar with initials "LK". Subtitle: "Email • lena.k@example.pl".
+Element 21: A list item for "Mohamed Hassan", avatar with initials "MH". Subtitle: "Mobile • +20 100 123 4567".
+Element 22: A list item for "Natalie Brooks", avatar with profile photo. Subtitle: "Work • n.brooks@designhouse.com".
+Element 23: A list item for "Oscar Rivera", avatar with initials "OR". Subtitle: "Company • oscar.r@latamconnect.com".
+Element 24: A button labeled "Phone contacts", which can be checked or selected to filter the contact view accordingly.
+Element 25: A button labeled "Email contacts", similar in function to the previous button, offering an alternative view.
+Element 26: A button labeled "Company", likely to filter contacts by organization. It is checkable and enabled.
+Element 27: A tooltip-like overlay prompting the user that “Settings and Help & feedback” have moved, and suggesting to open account and settings.
+Element 28: A text label inside the tooltip box reading “Now you can find Settings and Help & feedback here”. It visually delivers the tooltip content.
+Element 29: A system clock widget in the top-left of the status bar, showing both visual time (15:34) and a content description (11:34, maybe in a different timezone).
+Element 30: A Wi-Fi status indicator showing full signal. It's purely visual and not interactive.
+Element 31: A mobile network indicator displaying "Phone two bars", located in the status bar. It is also non-interactive.
+Element 32: A battery indicator labeled "Battery 100 percent", representing full charge. This element is visual only.

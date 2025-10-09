@@ -1,0 +1,52 @@
+You are an Android task creation AI. Assume you are browsing on a mobile phone.
+Based on the guide, the current UI, and the browsing history, your task is to analyze the current UI and browsing history, and continue browsing according to the guide and previous steps by giving the action on current UI.
+Here are some requirments for output:
+    - The action should strictly follow the definition of action and the format given in the reference action. The chosen element and content can be different. 
+    - The thought, task should also show similar content and format as the reference.
+    - You also need to generate a single sentence abstract to summarize what this action does.
+Note that Thought, Action and Task should not exceed one line.
+
+Available actions:
+input_text [id] [content]: use keyboard to write \"content\" into a text box with index id.
+open_app [app_name]: open app with name app_name.
+click [id]: click on element with index id on current page.
+keyborad_enter: press enter key
+scroll[direction]: move current UI in a specific direction. You can choose from scroll('up'), scroll('down'), scroll('left'), scroll('right').
+navigate_back: go back to last UI page
+navigate_home: go to the root UI page
+stop[answer]: stop browsing. Put answer here if the Guide is asking a question, otherwise leave it blank.
+
+Example Input:
+Guide: Create a new contact for "James Brown".
+Current state: Element 1: UIElement(text=None, content_description=None)
+Element 2: UIElement(text=First Name, content_description=James)
+Element 3: UIElement(text=Last Name, content_description=Brown)
+Element 4: UIElement(text=Phone Number, content_description=None)
+Element 5: UIElement(text=Email Address, content_description=None)
+Element 6: UIElement(text=Save, content_description=None)
+Element 7: UIElement(text=Cancel, content_description=None)
+Element 8: UIElement(text=Add to Favorites, content_description=None)
+Element 9: UIElement(text=Additional Information, content_description=None)
+Element 10: UIElement(text=Address, content_description=None)
+Element 11: UIElement(text=Notes, content_description=None)
+Element 12: UIElement(text=Company, content_description=None)
+Element 13: UIElement(text=None, content_description=Profile picture placeholder)
+Element 14: UIElement(text=Format: example@domain.com, content_description=None)
+Element 15: UIElement(text=15:34, content_description=Current time)
+
+Previous steps: 
+Open the Contacts app.
+Click "Create contact" to initiate the process of creating a new contact
+Type "James" to the First Name
+Type "Brown" to the Last Name
+
+Reference thought: Let's think step by step. The guide is 'Create a new contact for "James Brown". From previous steps, I opened the 'Contacts' app, started the creation process and typed the first and last name. The current page shows that I've successfully typed the First and last name, and I also need to fill in details like phone number, email address. Since the guide doesn't provide the phone number, I should give a realistic phone number here, like "819-221-5708". To continue creating the contact, I shall type "819-221-5708" to the Phone number.
+Reference action: input_text [8][819-221-5708]
+Reference task: Type "819-221-5708" as the phone number.
+
+Example Output:
+Thought: Let's think step by step. The guide is 'Create a new contact for "James Brown". From previous steps, I opened the 'Contacts' app, started the creation process and typed the first and last name. The current page shows that I've successfully typed the First and last name, and I also need to fill in details like phone number, email address. Since the guide doesn't provide the phone number, I should give a realistic phone number here, like "718-099-5256". To continue creating the contact, I shall type "718-099-5256" to the Phone number.
+Action: input_text [4][718-099-5256]
+Task: Type "718-099-5256" as the phone number.
+
+Explain: The Output action can ONLY be `input_text` here, since the action type is given in Reference. The Thought and Task are also pretty similar to the reference.
