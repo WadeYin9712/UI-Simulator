@@ -1,4 +1,4 @@
-# 🧠 UI-Simulator
+# 🌏 UI-Simulator
 
 [![License](https://img.shields.io/github/license/WadeYin9712/UI-Simulator)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)]()
@@ -21,7 +21,7 @@
 It provides a robust and extensible simulation framework to enable efficient, data-rich interaction modeling.
 
 <p align="center">
-  <img src="https://github.com/WadeYin9712/UI-Simulator/figures/uisimulator_intro.pdf" alt="UI-Simulator Overview" width="600">
+  <img src="https://github.com/WadeYin9712/UI-Simulator/tree/main/figures/uisimulator_intro.pdf" alt="UI-Simulator Overview" width="600">
 </p>
 
 ---
