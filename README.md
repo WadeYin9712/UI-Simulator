@@ -1,4 +1,4 @@
-# 🧠 UI-Simulator
+# 🌍 UI-Simulator
 
 [![License](https://img.shields.io/github/license/WadeYin9712/UI-Simulator)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)]()
@@ -6,7 +6,9 @@
 [![Stars](https://img.shields.io/github/stars/WadeYin9712/UI-Simulator?style=social)]()
 
 🔗 **Paper link**: [Link]() 
+
 🌐 **Website**: https://ui-simulator.notion.site/llms-as-scalable-digital-world-simulator
+
 🤗 **Model Weights:** [Link]()  
 
 📚 **Datasets:** [Link]()  
@@ -17,11 +19,11 @@
 
 ## 🚀 Overview
 
-**UI-Simulator** is a scalable, general-purpose simulator designed for **digital agent training** — and even applications **beyond digital environments**.  
+**🌍 UI-Simulator** is a scalable, general-purpose simulator designed for **digital agent training** — and even applications **beyond digital environments**.  
 It provides a robust and extensible simulation framework to enable efficient, data-rich interaction modeling.
 
 <p align="center">
-  <img src="https://github.com/WadeYin9712/UI-Simulator/figures/uisimulator_intro.pdf" alt="UI-Simulator Overview" width="600">
+  <img src="https://github.com/WadeYin9712/UI-Simulator/tree/main/figures/uisimulator_intro.png" alt="UI-Simulator Overview" width="600">
 </p>
 
 ---
