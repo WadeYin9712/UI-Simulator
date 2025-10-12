@@ -22,9 +22,7 @@
 **🌍 UI-Simulator** is a scalable, general-purpose simulator designed for **digital agent training** — and even applications **beyond digital environments**.  
 It provides a robust and extensible simulation framework to enable efficient, data-rich interaction modeling.
 
-<p align="center">
-  <img src="https://github.com/WadeYin9712/UI-Simulator/tree/main/figures/uisimulator_intro.png" alt="UI-Simulator Overview" width="600">
-</p>
+![UI-Simulator Overview](https://github.com/WadeYin9712/UI-Simulator/tree/main/figures/uisimulator_intro.png)
 
 ---
 
