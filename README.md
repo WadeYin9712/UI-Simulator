@@ -1,4 +1,4 @@
-# 🌍 UI-Simulator
+# 🌍 UI-Simulator: LLMs as Scalable, General-Purpose Simulators For Evolving Digital Agent Training
 
 [![License](https://img.shields.io/github/license/WadeYin9712/UI-Simulator)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)]()
@@ -44,7 +44,7 @@ conda create --name ui_simulator python=3.11
 conda activate ui_simulator
 pip install -r requirements.txt
 ```
-If you wanna run evaluation on **WebArena** or **AndroidWorld**, please configure the venv according to their official installation guide. We refer the readers to 
+If you wanna run evaluation on **WebArena** or **AndroidWorld**, please configure the venv according to their official installation guide. We refer the readers to the original repos.
 
 ---
 
@@ -58,7 +58,7 @@ We provides the shells for running the data collection [here](https://github.com
 export OPENAI_API_KEY=<YOUR_KEY>
 export OPENAI_ORG_ID=<YOUR_ORG_ID>
 
-# e.g. running rag-based data collection on web env, in gitlab domain
+# e.g. running to collect trajectories with retrieval-augmented simulation on web env, in gitlab domain
 bash shells/web_collector/rag/gitlab.sh
 ```
 
