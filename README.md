@@ -9,9 +9,7 @@
 
 🌐 **Website**: https://ui-simulator.notion.site/llms-as-scalable-digital-world-simulator
 
-🤗 **Model Weights:** [Link]()  
-
-📚 **Datasets:** [Link]()  
+🤗 **Model Weights & Datasets:** https://huggingface.co/UI-Simulator 
 
 📧 **Contact:** [da.yin9712@gmail.com](mailto:da.yin9712@gmail.com), [w10y20ming@gmail.com](mailto:w10y20ming@gmail.com)
 
@@ -19,10 +17,9 @@
 
 ## 🚀 Overview
 
-**🌍 UI-Simulator** is a scalable, general-purpose simulator designed for **digital agent training** — and even applications **beyond digital environments**.  
-It provides a robust and extensible simulation framework to enable efficient, data-rich interaction modeling.
+**🌍 UI-Simulator** is a scalable, general-purpose simulator designed for **digital agent training**. It provides a robust and extensible simulation framework to enable efficient, data-rich interaction modeling and venues for extending to broader domains.
 
-![UI-Simulator Overview](figures/uisimulator_intro.png)
+<div align=center><img src="https://github.com/WadeYin9712/UI-Simulator/blob/main/figures/uisimulator_video.gif" width="600px"></div>
 
 ---
 
@@ -30,7 +27,9 @@ It provides a robust and extensible simulation framework to enable efficient, da
 
 - 🔧 **Scalable & General-Purpose:** Generalized design adaptable to multiple digital environments, or even beyond.  
 - ⚙️ **Targeted Scaling Strategy:** Enables more rapid and **data-efficient** agent training.  
-- 🧩 **Comprehensive Evaluation:** Demonstrated strong results on **WebArena** and **AndroidWorld** benchmarks.  
+- 🧩 **Comprehensive Evaluation:** Demonstrated strong results on **WebArena** and **AndroidWorld** benchmarks.
+
+<div align=center><img src="https://github.com/WadeYin9712/UI-Simulator/blob/main/figures/uisimulator_intro.png" width="900px"></div>
 
 ---
 
