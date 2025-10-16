@@ -6,7 +6,8 @@ openai
 torch
 flask
 beautifulsoup4
-langchain
+rank-bm25
 datasets
 scikit-learn
 vllm
+beartype

@@ -1,4 +1,4 @@
-python collector_beta.py \
+python web_collector.py \
     --domain map \
     --min_steps 1 2 \
     --nums 6 6 \

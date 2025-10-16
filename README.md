@@ -60,6 +60,9 @@ export OPENAI_ORG_ID=<YOUR_ORG_ID>
 # e.g. running to collect trajectories with retrieval-augmented simulation on web env, in gitlab domain
 bash shells/web_collector/rag/gitlab.sh
 ```
+### 🏃🏻‍♀️ Training
+
+We used [alignment-handbook](https://github.com/huggingface/alignment-handbook/tree/main) as the codebase for our model training.
 
 ---
 
@@ -70,5 +73,5 @@ If you find this work useful, please consider citing:
 
 
 
-🧭 Automatic Contributors
+🧭  Contributors
 <a href="https://github.com/WadeYin9712/UI-Simulator/graphs/contributors"> <img src="https://contrib.rocks/image?repo=WadeYin9712/UI-Simulator" /> </a>

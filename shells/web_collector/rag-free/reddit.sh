@@ -1,4 +1,4 @@
-python collector_beta.py \
+python web_collector.py \
     --domain reddit \
     --min_steps 1\
     --nums 100 \

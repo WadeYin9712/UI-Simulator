@@ -1,7 +1,6 @@
 import openai
 import os
 from openai import OpenAI
-from Levenshtein import distance
 from rank_bm25 import BM25Okapi
 import json
 import inspect

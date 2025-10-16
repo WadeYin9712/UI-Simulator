@@ -17,17 +17,10 @@ from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 from converter import WebArenaConverter
 import re
-import numpy as np
 
-import shutil
-import subprocess
-import tempfile
-from nltk.corpus import stopwords
 from utils import *
 import traceback
 import argparse
-
-from webarena.browser_env import ScriptBrowserEnv, create_id_based_action
 
 ############################################
 ###### Initial states functions ######
@@ -117,7 +110,7 @@ def get_init_states(domain='shopping'):
 
 def judge_missed_entity(guide):
     # check if guide is search task or not
-    with open('system_prompts/data_collection/judge_missed_entity.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/judge_missed_entity.txt', 'r') as f:
         sys_prompt = f.read()
     prompt = '''
 Original task: {}'''.format(guide)
@@ -128,7 +121,7 @@ def general_entity(a11y_tree, guide):
     description = describe_state(a11y_tree)
     # print(description)
     # general entity
-    with open('system_prompts/data_collection/general_entity.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/general_entity.txt', 'r') as f:
         sys_prompt = f.read()
     prompt = '''
 Website description:
@@ -147,7 +140,7 @@ def specify_entity(a11y_tree, guide):
     description = describe_state(a11y_tree)
     # print(description)
     # specific entity
-    with open('system_prompts/data_collection/specific_entity.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/specific_entity.txt', 'r') as f:
         sys_prompt = f.read()
     prompt = '''
 Website description:
@@ -192,7 +185,7 @@ def divide_state(a11y_tree):
     return result
 
 def preprocess_state(description, elements):
-    with open('system_prompts/data_collection/filter_elements.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/filter_elements.txt', 'r') as f:
         system_prompt = f.read()
     prompt = """
 Website Description: 
@@ -218,7 +211,7 @@ Elements:
     return elements
 
 def describe_state(a11y_tree):
-    with open('system_prompts/data_collection/webpage_description.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/webpage_description.txt', 'r') as f:
         system_prompt = f.read()
     prompt = """
 webpage: 
@@ -233,7 +226,7 @@ webpage:
 
 def judge_guide_completion(guide, prev_steps, prev_state, cur_state):
     invariant_elements, new_elements = split_state(prev_state, cur_state)
-    with open('system_prompts/data_collection/judge_guide_completion.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/judge_guide_completion.txt', 'r') as f:
         system_prompt = f.read()
     prompt = """
 Original task:
@@ -253,7 +246,7 @@ Newly appeared elements:
         return 'Yes' in response or 'yes' in response
 
 def reformat_action(action: str, action_space):
-    with open('system_prompts/data_collection/format_action.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/format_action.txt', 'r') as f:
         system_prompt = f.read()
     sys_prompt = system_prompt.format(action_space)
     prompt = """
@@ -272,7 +265,7 @@ def task_guidance(cur_state: str,
                   domain=None):
     # state: a11y tree
     if first_guide:
-        with open('system_prompts/data_collection/first_task_control.txt', 'r') as f:
+        with open('system_prompts/web_data_collection/first_task_control.txt', 'r') as f:
             sys_prompt = f.read()
         sys_prompt = sys_prompt.format(num_guides)
         prompt = '''
@@ -280,7 +273,7 @@ Initial state:
 {}\n\nTasks:\n'''.format(cur_state)
 
     else:
-        with open('system_prompts/data_collection/task_control.txt', 'r') as f:
+        with open('system_prompts/web_data_collection/task_control.txt', 'r') as f:
             sys_prompt = f.read()
 
         example_guides = [
@@ -338,7 +331,7 @@ Previous steps:
 ############################################
 
 def propose_reasoning_tasks(cur_state):
-    with open('system_prompts/data_collection/reasoning_guide.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/reasoning_guide.txt', 'r') as f:
         system_prompt = f.read()
 
     prompt = """
@@ -360,7 +353,7 @@ Thought: Let's think step by step. """.format(cur_state)
     
 
 def judge_reasoning(high_level_intent, step_history):
-    with open('system_prompts/data_collection/judge_reasoning.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/judge_reasoning.txt', 'r') as f:
         system_prompt = f.read()
     prompt = """
 Original task guide: {}
@@ -377,7 +370,7 @@ def answer_question(cur_state, question):
     with open('system_prompts/element_select_example/analysis_state_example_webarena.json', 'r') as f:
         info_analysis_example_state = json.load(f)
         info_analysis_example_state = json.dumps(info_analysis_example_state)
-    with open('system_prompts/data_collection/question_answer.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/question_answer.txt', 'r') as f:
         system_prompt = f.read()
     system_prompt = system_prompt.format(info_analysis_example_state)
     prompt = """
@@ -399,7 +392,7 @@ Question: {}
     return explanation, answer
 
 def pre_reasoning(high_level_intent, step_history):
-    with open('system_prompts/data_collection/pre-reasoning_summarize.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/pre-reasoning_summarize.txt', 'r') as f:
         system_prompt = f.read()
     prompt = """Input:
 High Level intent: {}
@@ -419,7 +412,7 @@ def analysis_thought(state, step_history):
     with open('system_prompts/element_select_example/analysis_state_example_webarena.json', 'r') as f:
         info_analysis_example_state = json.load(f)
         info_analysis_example_state = json.dumps(info_analysis_example_state)
-    with open('system_prompts/data_collection/webpage_analysis.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/webpage_analysis.txt', 'r') as f:
         system_prompt = f.read()
     system_prompt = system_prompt.format(info_analysis_example_state)
     prompt = """
@@ -433,7 +426,7 @@ Thought: Let's think step by step. """.format(state, step_history)
     return response
 
 def rephrase_thought(intent, thought_history, action_history):
-    with open('system_prompts/data_collection/rephrase_thought_webarena.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/rephrase_thought_webarena.txt', 'r') as f:
         sys_prompt = f.read()
     prompt = '''
 Original thoughts: 
@@ -475,7 +468,7 @@ def align_thought_action(action_traj, new_thought_traj):
 ###### Main exploration functions ######
 ############################################
 def trajectory_eval(instruction, step_history):
-    with open('system_prompts/data_collection/trajectory_evaluation.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/trajectory_evaluation.txt', 'r') as f:
         system_prompt = f.read()
     prompt = """
 Instruction:
@@ -489,10 +482,10 @@ Steps:
 def task_summarize(step_history, general_flag):
     # trajectory summarize intent
     if not general_flag:
-        with open('system_prompts/data_collection/summarize_prompt.txt', 'r') as f:
+        with open('system_prompts/web_data_collection/summarize_prompt.txt', 'r') as f:
             system_prompt = f.read()
     else:
-        with open('system_prompts/data_collection/summarize_prompt_general.txt', 'r') as f:
+        with open('system_prompts/web_data_collection/summarize_prompt_general.txt', 'r') as f:
             system_prompt = f.read()
     prompt = """
 Input:
@@ -517,7 +510,7 @@ def thought_action_gen(domain, state, guide, step_history, early_stop=False):
     if isinstance(state, list):
         state = converter.convert_venv_to_real_env(state)
 
-    with open('system_prompts/data_collection/act_prompt_webarena.txt', 'r') as f:
+    with open('system_prompts/web_data_collection/act_prompt_webarena.txt', 'r') as f:
         sys_prompt = f.read()
     avail_actions = actions.AVAILABLE_WEBARENA_ACTIONS
 
@@ -926,210 +919,6 @@ def webarena_sim_traj(init_state: dict,
     # except Exception as e:
     #     print(e)
     return high_level_intent
-
-############################################
-###### Environment adaption functions ######
-############################################
-
-def save_transitions(domain, prev_state, new_state, action_history) -> bool:
-    root = f'intermediate_states/webarena/{domain}'
-    os.makedirs(root, exist_ok=True)
-    # get the number of current files
-    files = [f for f in os.listdir(root) if f.endswith('.json')]
-    current_num = len(files)
-    
-    clean_prev_state = clean_state(prev_state)
-    clean_new_state = clean_state(new_state)
-
-    if clean_new_state == clean_prev_state:
-        print("no state change")
-        return False
-
-    # naive deduplication
-    # by comparing the cleaned states
-    for file in files:
-        d = json.load(open(f'{root}/{file}', 'r'))
-        if d['clean_prev_state'] == clean_prev_state and d['clean_next_state'] == clean_new_state:
-            print("duplicated transition")
-            if action_history == d['action_history_list']:
-                # deduplication
-                return False
-
-    # shrink the states
-    prev_state = shrink_state(prev_state, keep_num=150)
-    new_state = shrink_state(new_state, keep_num=150)
-    clean_new_state = shrink_state(clean_new_state, keep_num=150)
-    clean_prev_state = shrink_state(clean_prev_state, keep_num=150)
-    # save the new state
-    filename = f'{root}/transition_{current_num}.json'
-    transition = {
-        'prev_state': prev_state,
-        'clean_prev_state': clean_prev_state,
-        'action_history': ' '.join(action_history),
-        'action_history_list': action_history,
-        'next_state': new_state,
-        'clean_next_state': clean_new_state
-    }
-    with open(filename, 'w') as f:
-        json.dump(transition, f, indent=4)
-
-    print("transition saved in ", filename)
-    
-    return True
-
-
-def browse_webarena_env(domain: str):
-    domain_configfile_dict = {
-        "shopping": "47",
-        "reddit": "27",
-        "gitlab": "44",
-        "map": "7",
-        "shopping_admin": "0"
-    }
-
-    original_dir = os.getcwd()
-    
-    env = ScriptBrowserEnv(
-        headless=True,
-        observation_type="accessibility_tree",
-        viewport_size={
-            "width": 25600,
-            "height": 1440,
-        },
-        sleep_after_execution=6.0,
-    )
-
-    # prepare the environment for a configuration defined in a json file
-    max_step = 6
-    max_level = 2
-    config_file = f"webarena/config_files/{domain_configfile_dict[domain]}.json"
-
-    _c = json.load(open(config_file, "r"))
-    if _c["storage_state"]:
-        try:
-            cookie_file_name = os.path.basename(_c["storage_state"])
-            temp_dir = tempfile.mkdtemp()
-            subprocess.run(
-                [
-                    "python",
-                    "-m",
-                    "browser_env.auto_login",  # Use module notation instead of script path
-                    "--auth_folder",
-                    temp_dir,
-                    "--site_list",
-                    domain,
-                ],
-                check=True,
-                cwd="webarena",  # Ensure it's executed inside /webarena
-            )
-            _c["storage_state"] = f"{temp_dir}/{cookie_file_name}"
-            assert os.path.exists(_c["storage_state"])
-            # update the config file
-            config_file = f"{temp_dir}/{os.path.basename(config_file)}"
-            with open(config_file, "w") as f:
-                json.dump(_c, f)
-        except subprocess.CalledProcessError as e:
-            print(e)
-            exit()
-
-    obs, info = env.reset(options={"config_file": config_file})
-
-    a11y_tree = obs["text"]
-    stack = []
-    stack.append(env.page.url)
-    
-    # tasks = task_guidance(a11y_tree, num_guides=5)
-    tasks = [
-        'View my account, then view the page of "My Orders"',
-    ]
-    def dfs(env, stack, guides, action_history, step_history, level):
-        if level >= max_level:
-            return
-        print('Current URL:', stack[-1])
-        print('Current level:', level)
-        for guide in guides:
-            tmp_stack = stack.copy()
-            tmp_action_history = action_history.copy()
-            tmp_step_history = step_history.copy()
-            while len(tmp_step_history) < max_step:
-                if env.page.url != tmp_stack[-1]:
-                    goto_action = f"goto [{tmp_stack[-1]}]"
-                    webarena_action = create_id_based_action(goto_action)
-                    obs, _, terminated, _, info = env.step(webarena_action)
-                    old_a11y_tree = obs["text"]
-                else:
-                    old_a11y_tree = env._get_obs()['text']
-                try:
-                    thought, action, task = thought_action_gen(domain, old_a11y_tree, guide, tmp_step_history, early_stop=True)
-                    webarena_action = create_id_based_action(action)
-                    obs, _, terminated, _, info = env.step(webarena_action)
-                except Exception as e:
-                    print(e)
-                    print("action not taken")
-                    break
-
-                if old_a11y_tree == obs["text"] or terminated:
-                    print("Page not changed")
-                    break
-
-                a11y_tree = obs["text"]
-                # map the element id within action to the actual element in the old a11y tree
-                element = find_element_cleaned(old_a11y_tree, webarena_action['element_id'])
-                if element is None:
-                    print("Element not found")
-                    break
-                new_action = action.split(' ')[0] + ' ' + element
-                if 'type' in action and '[1]' in action and webarena_action['element_id'] != '1':
-                    new_action += " press enter"
-
-                if tmp_action_history and new_action == tmp_action_history[-1]:
-                    print("Action repeated")
-                    print(tmp_action_history)
-                    print(new_action)
-                    break
-
-                tmp_action_history.append(new_action)
-                tmp_step_history.append(task)
-                tmp_stack.append(env.page.url)
-                if not save_transitions(domain, old_a11y_tree, a11y_tree, tmp_action_history):
-                    # failed to save the transition
-                    break
-
-                try:
-                    if judge_guide_completion(guide, tmp_step_history, old_a11y_tree, a11y_tree):
-                        
-                        new_guides = task_guidance(a11y_tree, old_a11y_tree, guide, tmp_step_history, first_guide=False, num_guides=5)
-                        dfs(env, tmp_stack, new_guides, tmp_action_history, tmp_step_history, level + 1)
-                except Exception as e:
-                    print(e)
-                    break
-            
-        return
-    
-    # do it multiple times
-    for _ in range(2):
-        # ensure the env is logged in
-        # first cd to /webarena
-
-        original_dir = os.getcwd()
-        try:
-            subprocess.run(
-                [
-                    "python",
-                    "-m",
-                    "browser_env.auto_login",  # Use module notation instead of script path
-                    "--auth_folder",
-                    './.auth',
-                    "--site_list",
-                    domain,
-                ],
-                check=True,
-                cwd="webarena",  # Ensure it's executed inside /webarena
-            )
-        except subprocess.CalledProcessError as e:
-            print(e)
-            exit()
-        dfs(env, stack, tasks, [], [], 0)
 
 ############################################
 ###### Data collection functions ######

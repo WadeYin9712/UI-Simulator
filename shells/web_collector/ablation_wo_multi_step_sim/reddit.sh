@@ -1,4 +1,4 @@
-python collector_ablation1.py \
+python web_collector_wo_task_control.py \
     --domain reddit \
     --min_steps 1 \
     --nums 40\

@@ -1,4 +1,4 @@
-python collector_beta.py \
+python web_collector.py \
     --domain gitlab \
     --min_steps 1 2 3 \
     --nums 50 50 50 \
