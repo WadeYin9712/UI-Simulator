@@ -5,7 +5,7 @@
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![Stars](https://img.shields.io/github/stars/WadeYin9712/UI-Simulator?style=social)]()
 
-🔗 **Paper link**: [Link]() 
+🔗 **Paper link**: https://arxiv.org/abs/2510.14969
 
 🌐 **Website**: https://ui-simulator.notion.site/llms-as-scalable-digital-world-simulator
 
